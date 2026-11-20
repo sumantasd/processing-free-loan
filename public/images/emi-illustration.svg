@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EBF4FF" />
+      <stop offset="100%" stop-color="#D9EBFF" />
+    </linearGradient>
+    <linearGradient id="gradCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F8FAFC" />
+    </linearGradient>
+    <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1677FF" />
+      <stop offset="100%" stop-color="#0866E8" />
+    </linearGradient>
+    <linearGradient id="gradGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12C878" />
+      <stop offset="100%" stop-color="#0FA863" />
+    </linearGradient>
+    <linearGradient id="gradGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#FFA500" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#062B59" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background decorative circular glow -->
+  <circle cx="250" cy="220" r="180" fill="url(#gradBg)" opacity="0.6" />
+
+  <!-- Clipboard / Loan Document -->
+  <g transform="translate(160, 60)" filter="url(#shadow)">
+    <!-- Main board -->
+    <rect x="0" y="0" width="220" height="290" rx="20" fill="url(#gradCard)" stroke="#E2E8F0" stroke-width="2" />
+    <!-- Top Clip -->
+    <rect x="65" y="-14" width="90" height="28" rx="8" fill="#062B59" />
+    <rect x="85" y="-6" width="50" height="12" rx="4" fill="#FFFFFF" opacity="0.8" />
+    <!-- Document content lines -->
+    <rect x="30" y="45" width="100" height="14" rx="4" fill="#1677FF" opacity="0.8" />
+    <text x="140" y="58" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#12C878">APPROVED</text>
+    <rect x="30" y="75" width="160" height="8" rx="4" fill="#CBD5E1" />
+    <rect x="30" y="95" width="130" height="8" rx="4" fill="#E2E8F0" />
+    <rect x="30" y="115" width="150" height="8" rx="4" fill="#E2E8F0" />
+    
+    <!-- Mini chart in document -->
+    <rect x="30" y="145" width="160" height="80" rx="12" fill="#F1F5F9" />
+    <path d="M 45 205 L 85 180 L 125 190 L 165 160" fill="none" stroke="#12C878" stroke-width="4" stroke-linecap="round" />
+    <circle cx="85" cy="180" r="4" fill="#12C878" />
+    <circle cx="165" cy="160" r="5" fill="#1677FF" />
+
+    <!-- Approved Seal / Stamp -->
+    <circle cx="160" cy="245" r="26" fill="url(#gradGreen)" opacity="0.9" />
+    <path d="M 150 245 L 157 252 L 172 237" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- 3D Calculator on the Left -->
+  <g transform="translate(60, 150)" filter="url(#shadow)">
+    <!-- Calculator body -->
+    <rect x="0" y="0" width="130" height="180" rx="20" fill="url(#gradBlue)" />
+    <!-- Screen -->
+    <rect x="15" y="18" width="100" height="38" rx="8" fill="#031B3B" />
+    <text x="105" y="44" font-family="'Plus Jakarta Sans', monospace" font-size="16" font-weight="700" fill="#12C878" text-anchor="end">₹ 10,624</text>
+    <!-- Buttons -->
+    <rect x="16" y="70" width="22" height="18" rx="5" fill="#FFFFFF" opacity="0.9" />
+    <rect x="44" y="70" width="22" height="18" rx="5" fill="#FFFFFF" opacity="0.9" />
+    <rect x="72" y="70" width="22" height="18" rx="5" fill="#FFFFFF" opacity="0.9" />
+    <rect x="100" y="70" width="16" height="18" rx="5" fill="#12C878" />
+
+    <rect x="16" y="96" width="22" height="18" rx="5" fill="#FFFFFF" opacity="0.9" />
+    <rect x="44" y="96" width="22" height="18" rx="5" fill="#FFFFFF" opacity="0.9" />
+    <rect x="72" y="96" width="22" height="18" rx="5" fill="#FFFFFF" opacity="0.9" />
+    <rect x="100" y="96" width="16" height="18" rx="5" fill="#FFB020" />
+
+    <rect x="16" y="122" width="22" height="18" rx="5" fill="#FFFFFF" opacity="0.9" />
+    <rect x="44" y="122" width="22" height="18" rx="5" fill="#FFFFFF" opacity="0.9" />
+    <rect x="72" y="122" width="22" height="18" rx="5" fill="#FFFFFF" opacity="0.9" />
+    <rect x="100" y="122" width="16" height="44" rx="5" fill="#12C878" />
+
+    <rect x="16" y="148" width="50" height="18" rx="5" fill="#FFFFFF" opacity="0.9" />
+    <rect x="72" y="148" width="22" height="18" rx="5" fill="#FFFFFF" opacity="0.9" />
+  </g>
+
+  <!-- Golden Rupee Coin Stacks (Foreground) -->
+  <g transform="translate(240, 310)" filter="url(#shadow)">
+    <!-- Stack 1 -->
+    <ellipse cx="40" cy="50" rx="30" ry="12" fill="url(#gradGold)" stroke="#D97706" stroke-width="1.5" />
+    <ellipse cx="40" cy="40" rx="30" ry="12" fill="url(#gradGold)" stroke="#D97706" stroke-width="1.5" />
+    <ellipse cx="40" cy="30" rx="30" ry="12" fill="url(#gradGold)" stroke="#D97706" stroke-width="1.5" />
+    <ellipse cx="40" cy="20" rx="30" ry="12" fill="url(#gradGold)" stroke="#D97706" stroke-width="1.5" />
+    <ellipse cx="40" cy="10" rx="30" ry="12" fill="url(#gradGold)" stroke="#D97706" stroke-width="1.5" />
+    <text x="40" y="15" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#78350F" text-anchor="middle">₹</text>
+
+    <!-- Stack 2 -->
+    <ellipse cx="90" cy="60" rx="26" ry="10" fill="url(#gradGold)" stroke="#D97706" stroke-width="1.5" />
+    <ellipse cx="90" cy="50" rx="26" ry="10" fill="url(#gradGold)" stroke="#D97706" stroke-width="1.5" />
+    <ellipse cx="90" cy="40" rx="26" ry="10" fill="url(#gradGold)" stroke="#D97706" stroke-width="1.5" />
+    <ellipse cx="90" cy="30" rx="26" ry="10" fill="url(#gradGold)" stroke="#D97706" stroke-width="1.5" />
+    <text x="90" y="34" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800" fill="#78350F" text-anchor="middle">₹</text>
+  </g>
+
+  <!-- Floating Green Percentage Badge -->
+  <g transform="translate(360, 110)" filter="url(#shadow)">
+    <rect x="0" y="0" width="60" height="60" rx="16" fill="url(#gradGreen)" />
+    <text x="30" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="middle">%</text>
+  </g>
+</svg>

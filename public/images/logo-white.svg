@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 160" width="100%" height="100%">
+  <!-- Top brand line: ProcessingFreeLoan.com in White & Electric Blue -->
+  <g id="brand-name">
+    <text x="32" y="78" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="54" font-weight="800" fill="#FFFFFF" letter-spacing="-1.5">Processing</text>
+    <text x="300" y="78" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="54" font-weight="800" fill="#1677FF" letter-spacing="-1.5">Free</text>
+    <text x="408" y="78" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="54" font-weight="800" fill="#FFFFFF" letter-spacing="-1.5">Loan</text>
+    
+    <!-- .com circle badge -->
+    <circle cx="505" cy="64" r="28" fill="#1677FF" />
+    <text x="505" y="71" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.5">.com</text>
+  </g>
+
+  <!-- Tagline Banner: LOAN WITHOUT PROCESSING FEE (with strikethrough) -->
+  <g id="tagline-badge" transform="translate(52, 98)">
+    <polygon points="12,0 420,0 406,38 -2,38" fill="#000000" stroke="#334155" stroke-width="1" />
+    <text x="21" y="26" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="17" font-weight="800" fill="#FFFFFF" letter-spacing="2.8">LOAN WITHOUT PROCESSING FEE</text>
+    <line x1="178" y1="20" x2="394" y2="20" stroke="#FF3333" stroke-width="3.5" stroke-linecap="round" />
+  </g>
+</svg>
