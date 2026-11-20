@@ -72,6 +72,16 @@
     flex-shrink: 0 !important;
 }
 
+/* Footer Logo Wrapper with White Background and Rounded Corners */
+.logo-footer-wrapper {
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Custom Range Slider styling for EMI Calculator */
 input[type="range"] {
     accent-color: #12C878;

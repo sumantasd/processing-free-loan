@@ -7,10 +7,12 @@
             
             <!-- Column 1: Brand & Logo (Col 4) -->
             <div class="lg:col-span-4 space-y-4">
-                <a href="{{ route('home') }}" class="inline-block">
-                    <img src="{{ asset('images/logo-white.png') }}" 
-                         alt="ProcessingFreeLoan.com - Loan Without Processing Fee" 
-                         class="h-10 sm:h-12 w-auto object-contain">
+                <a href="{{ route('home') }}" class="inline-block group" aria-label="ProcessingFreeLoan.com Home">
+                    <div class="logo-footer-wrapper p-2 sm:p-2.5 shadow-sm">
+                        <img src="{{ asset('images/logo.png') }}" 
+                             alt="ProcessingFreeLoan.com - Loan Without Processing Fee" 
+                             class="h-9 sm:h-11 w-auto max-w-[200px] object-contain">
+                    </div>
                 </a>
 
                 <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
