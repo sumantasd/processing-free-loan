@@ -18,7 +18,7 @@
          @click="closeEnquiry()"
          class="fixed inset-0 bg-[#031B3B]/80 backdrop-blur-sm transition-opacity"></div>
 
-    <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+    <div class="flex min-h-full items-center justify-center p-3 sm:p-4 text-center">
         
         <div x-show="enquiryModalOpen"
              x-transition:enter="ease-out duration-300"
@@ -27,7 +27,7 @@
              x-transition:leave="ease-in duration-200"
              x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
              x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-             class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl border border-slate-100"
+             class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-2xl transition-all w-full max-w-[calc(100vw-24px)] sm:max-w-2xl max-h-[calc(100dvh-28px)] max-h-[calc(100vh-28px)] flex flex-col my-auto border border-slate-100 box-border"
              x-data="{
                  fullName: '',
                  mobile: '',
@@ -48,6 +48,13 @@
                  init() {
                      this.$watch('$parent.selectedLoan', value => { if (value) this.loanType = value; });
                      this.$watch('$parent.loanAmount', value => { if (value) this.amount = value; });
+                     this.$watch('$parent.enquiryModalOpen', value => {
+                         if (value) {
+                             document.body.style.overflow = 'hidden';
+                         } else {
+                             document.body.style.overflow = '';
+                         }
+                     });
                  },
 
                  async submitEnquiry() {
@@ -58,8 +65,9 @@
                          this.errors.fullName = 'Please enter your full name as per PAN.';
                      }
 
+                     const mobileClean = this.mobile ? this.mobile.replace(/\s+/g, '') : '';
                      const mobilePattern = /^[6-9]\d{9}$/;
-                     if (!this.mobile || !mobilePattern.test(this.mobile.replace(/\s+/g, ''))) {
+                     if (!mobileClean || !mobilePattern.test(mobileClean)) {
                          this.errors.mobile = 'Enter a valid 10-digit Indian mobile number.';
                      }
 
@@ -88,7 +96,7 @@
                              },
                              body: JSON.stringify({
                                  full_name: this.fullName,
-                                 mobile: this.mobile.replace(/\s+/g, ''),
+                                 mobile: mobileClean,
                                  email: this.email,
                                  loan_category: this.loanType,
                                  loan_amount: this.amount || null,
@@ -133,38 +141,39 @@
                      this.pincode = '';
                      this.submitted = false;
                      this.errors = {};
+                     document.body.style.overflow = '';
                      this.closeEnquiry();
                  }
              }">
 
-            <!-- Modal Header -->
-            <div class="bg-gradient-to-r from-[#031B3B] to-[#0866E8] text-white px-6 py-5 flex items-center justify-between">
-                <div>
-                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-bold uppercase tracking-wider mb-1">
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#12C878]"></span>
-                        <span>Zero Processing Fee Priority</span>
+            <!-- Modal Header (Fixed at top) -->
+            <div class="bg-gradient-to-r from-[#031B3B] to-[#0866E8] text-white px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between flex-shrink-0">
+                <div class="min-w-0 pr-3">
+                    <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#12C878] flex-shrink-0"></span>
+                        <span class="truncate">Zero Processing Fee Priority</span>
                     </div>
-                    <h3 class="text-xl font-extrabold" id="modal-title">
+                    <h3 class="text-lg sm:text-xl font-extrabold truncate" id="modal-title">
                         Apply For Your Loan Online
                     </h3>
                 </div>
 
                 <button type="button" 
-                        @click="closeEnquiry()" 
+                        @click="resetForm()" 
                         aria-label="Close dialog"
-                        class="p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/10 transition-colors">
+                        class="p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/10 transition-colors flex-shrink-0">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
 
-            <!-- Form Body (if not submitted) -->
-            <div class="p-6 sm:p-8" x-show="!submitted">
-                <form @submit.prevent="submitEnquiry()" class="space-y-4 text-left">
+            <!-- Form Body (Scrollable, strictly within max-height) -->
+            <div class="p-4 sm:p-6 lg:p-8 overflow-y-auto overflow-x-hidden flex-1 space-y-3.5 sm:space-y-4 text-left overscroll-contain box-border" x-show="!submitted">
+                <form @submit.prevent="submitEnquiry()" class="space-y-3.5 sm:space-y-4 text-left">
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         
                         <!-- Full Name -->
-                        <div>
+                        <div class="min-w-0">
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                                 Full Name (As per PAN) <span class="text-rose-500">*</span>
                             </label>
@@ -172,7 +181,7 @@
                                    x-model="fullName" 
                                    required 
                                    placeholder="e.g. Rahul Sharma" 
-                                   class="w-full h-11 px-3.5 bg-slate-50 border rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all"
+                                   class="w-full h-11 px-3.5 bg-slate-50 border rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all box-border"
                                    :class="errors.fullName ? 'border-rose-400 bg-rose-50/50' : 'border-slate-200'">
                             <template x-if="errors.fullName">
                                 <p class="text-[11px] text-rose-500 font-semibold mt-1" x-text="errors.fullName"></p>
@@ -180,18 +189,18 @@
                         </div>
 
                         <!-- Mobile Number -->
-                        <div>
+                        <div class="min-w-0">
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                                 Mobile Number <span class="text-rose-500">*</span>
                             </label>
-                            <div class="relative">
-                                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-xs font-bold text-slate-400">+91</span>
+                            <div class="relative w-full">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-xs font-bold text-slate-400 pointer-events-none">+91</span>
                                 <input type="tel" 
                                        x-model="mobile" 
                                        required 
                                        maxlength="10"
                                        placeholder="98765 43210" 
-                                       class="w-full h-11 pl-12 pr-3.5 bg-slate-50 border rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all"
+                                       class="w-full h-11 pl-11 pr-3 bg-slate-50 border rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all box-border"
                                        :class="errors.mobile ? 'border-rose-400 bg-rose-50/50' : 'border-slate-200'">
                             </div>
                             <template x-if="errors.mobile">
@@ -201,17 +210,17 @@
 
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         
                         <!-- Email -->
-                        <div>
+                        <div class="min-w-0">
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                                 Email Address
                             </label>
                             <input type="email" 
                                    x-model="email" 
                                    placeholder="name@example.com" 
-                                   class="w-full h-11 px-3.5 bg-slate-50 border rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all"
+                                   class="w-full h-11 px-3.5 bg-slate-50 border rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all box-border"
                                    :class="errors.email ? 'border-rose-400' : 'border-slate-200'">
                             <template x-if="errors.email">
                                 <p class="text-[11px] text-rose-500 font-semibold mt-1" x-text="errors.email"></p>
@@ -219,12 +228,12 @@
                         </div>
 
                         <!-- Loan Category -->
-                        <div>
+                        <div class="min-w-0">
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                                 Loan Category <span class="text-rose-500">*</span>
                             </label>
                             <select x-model="loanType" 
-                                    class="w-full h-11 px-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all">
+                                    class="w-full h-11 px-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all box-border">
                                 <option value="personal-loan">Personal Loan</option>
                                 <option value="business-loan">Business Loan</option>
                                 <option value="new-car-loan">New Car Loan</option>
@@ -236,10 +245,10 @@
 
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                         
                         <!-- Required Loan Amount -->
-                        <div>
+                        <div class="min-w-0">
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                                 Loan Amount (₹)
                             </label>
@@ -247,11 +256,11 @@
                                    x-model="amount" 
                                    placeholder="500000" 
                                    step="10000"
-                                   class="w-full h-11 px-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all">
+                                   class="w-full h-11 px-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all box-border">
                         </div>
 
                         <!-- Monthly Income -->
-                        <div>
+                        <div class="min-w-0">
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                                 Monthly Income (₹)
                             </label>
@@ -259,16 +268,16 @@
                                    x-model="monthlyIncome" 
                                    placeholder="50000" 
                                    step="5000"
-                                   class="w-full h-11 px-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all">
+                                   class="w-full h-11 px-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all box-border">
                         </div>
 
                         <!-- Employment Type -->
-                        <div>
+                        <div class="min-w-0">
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                                 Employment Type
                             </label>
                             <select x-model="employmentType" 
-                                    class="w-full h-11 px-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all">
+                                    class="w-full h-11 px-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all box-border">
                                 <option value="salaried">Salaried</option>
                                 <option value="self_employed_professional">Professional (Dr/CA)</option>
                                 <option value="self_employed_business">Business Owner</option>
@@ -277,21 +286,21 @@
 
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         
                         <!-- City -->
-                        <div>
+                        <div class="min-w-0">
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                                 City
                             </label>
                             <input type="text" 
                                    x-model="city" 
                                    placeholder="e.g. Kolkata, Mumbai, Delhi" 
-                                   class="w-full h-11 px-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all">
+                                   class="w-full h-11 px-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all box-border">
                         </div>
 
                         <!-- Pincode -->
-                        <div>
+                        <div class="min-w-0">
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                                 Pincode
                             </label>
@@ -299,19 +308,19 @@
                                    x-model="pincode" 
                                    maxlength="6"
                                    placeholder="700091" 
-                                   class="w-full h-11 px-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all">
+                                   class="w-full h-11 px-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all box-border">
                         </div>
 
                     </div>
 
                     <!-- Consent Checkbox -->
-                    <div class="pt-2">
+                    <div class="pt-1">
                         <label class="flex items-start gap-2.5 cursor-pointer text-xs text-slate-600 leading-relaxed">
                             <input type="checkbox" 
                                    x-model="consent" 
                                    required 
-                                   class="mt-0.5 rounded text-[#12C878] focus:ring-[#12C878] w-4 h-4">
-                            <span>
+                                   class="mt-0.5 rounded text-[#12C878] focus:ring-[#12C878] w-4 h-4 flex-shrink-0">
+                            <span class="min-w-0">
                                 I hereby authorize ProcessingFreeLoan.com and its partner Banks & NBFCs to contact me via Call, SMS, WhatsApp, or Email regarding my loan enquiry, overriding NDNC registry.
                             </span>
                         </label>
@@ -321,10 +330,10 @@
                     </div>
 
                     <!-- Submit Button -->
-                    <div class="pt-3">
+                    <div class="pt-2">
                         <button type="submit" 
                                 :disabled="loading"
-                                class="w-full py-4 rounded-xl font-extrabold text-sm text-white bg-gradient-to-r from-[#12C878] to-[#0fa863] hover:from-[#0fa863] hover:to-[#0c8e54] shadow-lg shadow-emerald-500/25 transition-all flex items-center justify-center gap-2 disabled:opacity-50">
+                                class="w-full py-3.5 sm:py-4 rounded-xl font-extrabold text-sm text-white bg-gradient-to-r from-[#12C878] to-[#0fa863] hover:from-[#0fa863] hover:to-[#0c8e54] shadow-lg shadow-emerald-500/25 transition-all flex items-center justify-center gap-2 disabled:opacity-50">
                             <template x-if="loading">
                                 <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
                             </template>
@@ -333,7 +342,7 @@
                         </button>
                     </div>
 
-                    <div class="text-center text-[11px] text-slate-400 pt-1">
+                    <div class="text-center text-[11px] text-slate-400 pt-0.5">
                         🔒 Safe & Secure 256-Bit SSL Encryption • No upfront charges
                     </div>
 
@@ -341,33 +350,33 @@
             </div>
 
             <!-- Success State -->
-            <div class="p-8 sm:p-10 text-center space-y-5" x-show="submitted" style="display: none;">
-                <div class="w-16 h-16 rounded-full bg-emerald-100 text-[#12C878] mx-auto flex items-center justify-center shadow-inner">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="p-6 sm:p-10 text-center space-y-4 overflow-y-auto flex-1 box-border" x-show="submitted" style="display: none;">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-100 text-[#12C878] mx-auto flex items-center justify-center shadow-inner">
+                    <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                     </svg>
                 </div>
 
-                <div class="space-y-2">
-                    <h3 class="text-2xl font-extrabold text-[#062B59]">
+                <div class="space-y-1.5">
+                    <h3 class="text-xl sm:text-2xl font-extrabold text-[#062B59]">
                         Enquiry Submitted Successfully!
                     </h3>
-                    <p class="text-sm text-slate-600 max-w-md mx-auto leading-relaxed" x-text="responseMsg">
+                    <p class="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed" x-text="responseMsg">
                         Your loan enquiry has been registered with Zero Processing Fee priority.
                     </p>
                 </div>
 
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 max-w-xs mx-auto">
+                <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-200 max-w-xs mx-auto">
                     <div class="text-[11px] font-bold text-slate-400 uppercase">Application Reference Code</div>
-                    <div class="text-lg font-mono font-extrabold text-[#1677FF] mt-1" x-text="referenceCode">
+                    <div class="text-base sm:text-lg font-mono font-extrabold text-[#1677FF] mt-1" x-text="referenceCode">
                         PFL-100248
                     </div>
                 </div>
 
-                <div class="pt-4">
+                <div class="pt-2">
                     <button type="button" 
                             @click="resetForm()" 
-                            class="px-8 py-3 rounded-xl font-bold text-sm text-white bg-[#062B59] hover:bg-[#0866E8] transition-all">
+                            class="px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-[#062B59] hover:bg-[#0866E8] transition-all">
                         Close & Continue Exploring
                     </button>
                 </div>

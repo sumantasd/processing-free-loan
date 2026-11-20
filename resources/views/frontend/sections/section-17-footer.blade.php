@@ -77,7 +77,7 @@
                     
                     <div>
                         <strong class="text-slate-200 block text-[11px] uppercase tracking-wider mb-0.5">REGISTERED OFFICE:</strong>
-                        <p class="leading-relaxed text-slate-400 text-xs">
+                        <p class="leading-relaxed text-slate-400 text-xs break-words">
                             {{ $brand['registered_office'] ?? 'Khata No. 3429, Premer Danga, Near PDB High School, Khattimari, Cooch Behar, West Bengal – 736171, India.' }}
                         </p>
                         <a href="{{ $brand['google_maps_url'] ?? 'https://maps.google.com/?q=Premer+Danga+Khattimari+Cooch+Behar+West+Bengal+736171' }}" 
@@ -99,7 +99,7 @@
 
                     <div>
                         <strong class="text-slate-200 block text-[11px] uppercase tracking-wider mb-0.5">Email Us:</strong>
-                        <a href="{{ $brand['email_url'] ?? 'mailto:support@processingfreeloan.com' }}" class="text-slate-300 hover:text-white transition-colors text-xs truncate block">
+                        <a href="{{ $brand['email_url'] ?? 'mailto:support@processingfreeloan.com' }}" class="text-slate-300 hover:text-white transition-colors text-xs break-all sm:break-normal block">
                             {{ $brand['email'] ?? 'support@processingfreeloan.com' }}
                         </a>
                     </div>

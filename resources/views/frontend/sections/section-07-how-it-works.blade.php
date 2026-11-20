@@ -21,7 +21,7 @@
             <!-- Connecting Line on Desktop -->
             <div class="hidden lg:block absolute top-1/2 left-10 right-10 h-0.5 bg-gradient-to-r from-blue-200 via-emerald-200 to-blue-200 -translate-y-12 z-0"></div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4 lg:gap-6 relative z-10">
                 @php
                     $stepIcons = [
                         '01' => 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
@@ -33,23 +33,23 @@
                 @endphp
 
                 @foreach($howItWorks as $step)
-                <div class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl border border-slate-100 hover:border-emerald-200 transition-all duration-300 flex flex-col justify-between text-center transform hover:-translate-y-2">
+                <div class="group bg-white rounded-2xl p-4 sm:p-5 lg:p-6 shadow-sm hover:shadow-xl border border-slate-100 hover:border-emerald-200 transition-all duration-300 flex flex-col justify-between text-center transform hover:-translate-y-1.5 sm:hover:-translate-y-2">
                     
                     <div>
-                        <!-- Step Number Badge -->
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-tr from-[#062B59] to-[#1677FF] text-white flex items-center justify-center font-extrabold text-lg shadow-md group-hover:from-[#12C878] group-hover:to-[#0fa863] transition-all duration-300 mb-5">
+                        <!-- Step Number Badge (Compact on mobile, full size on desktop) -->
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mx-auto rounded-xl sm:rounded-2xl bg-gradient-to-tr from-[#062B59] to-[#1677FF] text-white flex items-center justify-center font-extrabold text-sm sm:text-base lg:text-lg shadow-md group-hover:from-[#12C878] group-hover:to-[#0fa863] transition-all duration-300 mb-3 sm:mb-4 lg:mb-5">
                             {{ $step['step'] }}
                         </div>
 
                         <!-- Icon Container -->
-                        <div class="w-10 h-10 mx-auto rounded-xl bg-blue-50 text-[#1677FF] group-hover:bg-emerald-50 group-hover:text-[#12C878] transition-colors duration-300 flex items-center justify-center mb-4">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 mx-auto rounded-lg sm:rounded-xl bg-blue-50 text-[#1677FF] group-hover:bg-emerald-50 group-hover:text-[#12C878] transition-colors duration-300 flex items-center justify-center mb-2 sm:mb-3 lg:mb-4">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $stepIcons[$step['step']] ?? 'M12 6v6m0 0v6m0-6h6m-6 0H6' }}"/>
                             </svg>
                         </div>
 
                         <!-- Step Title -->
-                        <h3 class="text-base font-extrabold text-[#062B59] group-hover:text-[#1677FF] transition-colors mb-2">
+                        <h3 class="text-sm sm:text-base font-extrabold text-[#062B59] group-hover:text-[#1677FF] transition-colors mb-1.5 sm:mb-2 leading-snug">
                             {{ $step['title'] }}
                         </h3>
 
@@ -60,7 +60,7 @@
                     </div>
 
                     <!-- Micro indicator -->
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-center gap-1 text-[11px] font-bold text-slate-400 group-hover:text-[#12C878] transition-colors">
+                    <div class="mt-3 pt-2.5 sm:mt-4 sm:pt-3 border-t border-slate-100 flex items-center justify-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-400 group-hover:text-[#12C878] transition-colors">
                         <span>Step {{ $step['step'] }}</span>
                         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </div>

@@ -4,7 +4,7 @@
     <!-- ============================================== -->
     <!-- 1. MOBILE LOAN PRODUCTS (STRICTLY MATCHING REFERENCE) -->
     <!-- ============================================== -->
-    <div class="block lg:hidden rounded-t-[32px] sm:rounded-t-[40px] bg-white -mt-6 sm:-mt-8 pt-8 pb-12 px-4 sm:px-6 relative z-20 shadow-[0_-8px_30px_rgba(0,0,0,0.06)]">
+    <div class="block lg:hidden bg-white pt-3 pb-12 px-4 sm:px-6 relative z-20 border-t border-slate-100/60">
         
         <!-- Header -->
         <div class="text-center mb-6">
