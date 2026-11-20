@@ -92,9 +92,10 @@
                     <!-- Customer Info Footer -->
                     <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                         <div class="flex items-center gap-3">
-                            <img src="{{ $t['avatar'] }}" 
+                            <img src="{{ str_starts_with($t['avatar'], 'http') ? $t['avatar'] : asset(ltrim($t['avatar'], '/')) }}" 
                                  alt="{{ $t['name'] }}" 
-                                 class="w-11 h-11 rounded-full object-cover border-2 border-emerald-400/50">
+                                 class="w-11 h-11 rounded-full object-cover border-2 border-emerald-400/50"
+                                 loading="lazy">
                             <div>
                                 <h4 class="text-xs sm:text-sm font-extrabold text-[#062B59]">{{ $t['name'] }}</h4>
                                 <p class="text-[11px] text-slate-400 font-medium">{{ $t['city'] }}</p>

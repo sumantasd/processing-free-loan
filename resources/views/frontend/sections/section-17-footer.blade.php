@@ -8,9 +8,9 @@
             <!-- Column 1: Brand & Logo (Col 4) -->
             <div class="lg:col-span-4 space-y-4">
                 <a href="{{ route('home') }}" class="inline-block">
-                    <img src="{{ asset('images/logo-white.svg') }}" 
-                         alt="Processing Free Loan" 
-                         class="h-11 sm:h-12 w-auto object-contain">
+                    <img src="{{ asset('images/logo-white.png') }}" 
+                         alt="ProcessingFreeLoan.com - Loan Without Processing Fee" 
+                         class="h-10 sm:h-12 w-auto object-contain">
                 </a>
 
                 <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">

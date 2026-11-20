@@ -89,8 +89,15 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* Floating animation */
 @keyframes floatSlow {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 .animate-float {
@@ -98,8 +105,15 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 @keyframes pulseGlow {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.8; }
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
 }
 
 .animate-pulse-glow {
@@ -110,6 +124,7 @@ input[type="range"]::-webkit-slider-thumb {
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
 .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;

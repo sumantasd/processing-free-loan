@@ -33,6 +33,7 @@
                     <div class="relative h-48 w-full overflow-hidden bg-slate-100">
                         <img src="{{ $article['image'] }}" 
                              alt="{{ $article['title'] }}" 
+                             loading="lazy"
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#062B59] px-3 py-1 rounded-full text-xs font-extrabold shadow-sm">
                             {{ $article['category'] }}

@@ -119,6 +119,34 @@
 
         </div>
 
+        <!-- Mobile Hero Customer Image Container (Appears on Mobile & Matches Desktop Customer Asset) -->
+        <div class="relative mt-6 mb-2 max-w-xs sm:max-w-sm mx-auto">
+            <!-- Ambient Glow behind image -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#0866E8]/30 to-[#12C878]/25 rounded-3xl filter blur-xl transform scale-95 pointer-events-none"></div>
+
+            <div class="relative rounded-3xl overflow-hidden border border-white/20 bg-gradient-to-b from-white/10 to-transparent shadow-2xl">
+                <img src="{{ asset('images/hero-man.jpg') }}" 
+                     alt="Indian professional holding smartphone exploring loan offers" 
+                     class="w-full h-64 sm:h-72 object-cover object-top filter brightness-95 contrast-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#031B3B]/90 via-[#031B3B]/20 to-transparent"></div>
+                
+                <!-- Floating Mobile Status Badge on Image -->
+                <div class="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 shadow-lg flex items-center justify-between border border-white/40">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-[#12C878] animate-pulse"></span>
+                        <div class="text-left">
+                            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Status</div>
+                            <div class="text-xs font-extrabold text-[#062B59]">Loan Approved</div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-[10px] font-bold text-[#12C878] uppercase">Zero Fee Priority</div>
+                        <div class="text-xs font-extrabold text-[#1677FF]">Up to ₹50 Lakhs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- ========================================== -->

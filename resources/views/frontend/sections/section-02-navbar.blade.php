@@ -4,12 +4,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-18 sm:h-20">
             
-            <!-- LEFT: Exact supplied brand logo -->
-            <div class="flex-shrink-0">
-                <a href="{{ route('home') }}" class="flex items-center gap-2 group">
+            <!-- LEFT: Exact supplied brand logo (Increased mobile size for clear recognition) -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href="{{ route('home') }}" class="flex items-center group">
                     <img src="{{ asset('images/logo.png') }}" 
                          alt="ProcessingFreeLoan.com - Loan Without Processing Fee" 
-                         class="h-9 sm:h-11 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-102">
+                         class="w-[148px] sm:w-[165px] lg:w-[195px] xl:w-[215px] h-auto max-h-12 object-contain transition-transform duration-200 group-hover:scale-102">
                 </a>
             </div>
 

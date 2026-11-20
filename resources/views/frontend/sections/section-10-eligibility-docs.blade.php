@@ -22,7 +22,8 @@
                 <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
                     <img src="{{ asset('images/advisor-laptop.jpg') }}" 
                          alt="Financial advisor evaluating loan eligibility and documents" 
-                         class="w-full h-[450px] sm:h-[520px] object-cover object-center">
+                         loading="lazy"
+                         class="w-full h-[320px] sm:h-[450px] lg:h-[520px] object-cover object-center">
                     
                     <!-- Gradient Overlay -->
                     <div class="absolute inset-0 bg-gradient-to-t from-[#031B3B]/90 via-transparent to-transparent"></div>

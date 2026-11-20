@@ -13,6 +13,7 @@
                     <div class="relative w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-3xl overflow-hidden border-4 border-white/20 shadow-2xl">
                         <img src="{{ asset('images/support-agent.jpg') }}" 
                              alt="Professional Indian customer support loan advisor" 
+                             loading="lazy"
                              class="w-full h-full object-cover object-top">
                         <div class="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-sm rounded-xl py-1 text-center text-[11px] font-bold text-emerald-400">
                             ● Senior Loan Expert Online

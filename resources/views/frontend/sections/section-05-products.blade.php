@@ -19,24 +19,38 @@
             </p>
         </div>
 
-        <!-- 2-Column Grid (Per Primary Reference Image) -->
+        <!-- 2-Column Grid (All 6 Products with Authentic Indian Images) -->
         <div class="grid grid-cols-2 gap-3 sm:gap-4">
             
-            <!-- 1. Personal Loan (Soft Mint Gradient + Money Bag) -->
-            <div class="bg-gradient-to-br from-[#E6F8F3] to-[#E6F4FF] border border-emerald-100/90 rounded-2xl p-3.5 flex flex-col justify-between shadow-2xs hover:shadow-md transition-all">
+            <!-- 1. Personal Loan (Salaried Indian Professional) -->
+            <div class="bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
-                    <div class="w-10 h-10 rounded-xl bg-white shadow-2xs flex items-center justify-center text-[#12C878] mb-2.5">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
+                    <!-- Product Image -->
+                    <div class="relative h-28 sm:h-32 w-full overflow-hidden bg-slate-100">
+                        <img src="{{ asset('images/salaried-man.jpg') }}" 
+                             alt="Personal Loan for Salaried Employees" 
+                             class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <span class="absolute top-2 left-2 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-white/90 text-[#062B59] shadow-xs">
+                            ₹50k - ₹50L
+                        </span>
+                        <span class="absolute bottom-1.5 left-2 text-[10px] font-bold text-emerald-300">
+                            Zero Fee Priority
+                        </span>
                     </div>
-                    <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">Personal Loan</h3>
-                    <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-3">Quick funds for your personal needs</p>
+
+                    <!-- Details -->
+                    <div class="p-3 sm:p-3.5">
+                        <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">Personal Loan</h3>
+                        <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-2 line-clamp-2">Quick funds for your personal needs</p>
+                    </div>
                 </div>
-                <div class="flex justify-end">
+
+                <div class="p-3 pt-0 flex items-center justify-between">
+                    <span class="text-[11px] font-bold text-[#1677FF]">From 10.49%</span>
                     <a href="{{ route('loans.personal') }}" 
                        aria-label="Personal Loan Details"
-                       class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all">
+                       class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all flex-shrink-0">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                         </svg>
@@ -44,21 +58,35 @@
                 </div>
             </div>
 
-            <!-- 2. Business Loan (Soft Peach Gradient + Storefront) -->
-            <div class="bg-gradient-to-br from-[#FFF7ED] to-[#FFEDD5] border border-orange-100/90 rounded-2xl p-3.5 flex flex-col justify-between shadow-2xs hover:shadow-md transition-all">
+            <!-- 2. Business Loan (Indian Retail / Store Owner) -->
+            <div class="bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
-                    <div class="w-10 h-10 rounded-xl bg-white shadow-2xs flex items-center justify-center text-[#F4511E] mb-2.5">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                        </svg>
+                    <!-- Product Image -->
+                    <div class="relative h-28 sm:h-32 w-full overflow-hidden bg-slate-100">
+                        <img src="{{ asset('images/business-store.jpg') }}" 
+                             alt="Business Loan for MSME & Shop Owners" 
+                             class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <span class="absolute top-2 left-2 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-white/90 text-[#062B59] shadow-xs">
+                            Up to ₹2 Cr
+                        </span>
+                        <span class="absolute bottom-1.5 left-2 text-[10px] font-bold text-emerald-300">
+                            Zero Collateral
+                        </span>
                     </div>
-                    <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">Business Loan</h3>
-                    <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-3">Grow your business with easy loans</p>
+
+                    <!-- Details -->
+                    <div class="p-3 sm:p-3.5">
+                        <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">Business Loan</h3>
+                        <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-2 line-clamp-2">Grow your business with easy credit</p>
+                    </div>
                 </div>
-                <div class="flex justify-end">
+
+                <div class="p-3 pt-0 flex items-center justify-between">
+                    <span class="text-[11px] font-bold text-[#1677FF]">From 11.25%</span>
                     <a href="{{ route('loans.business') }}" 
                        aria-label="Business Loan Details"
-                       class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all">
+                       class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all flex-shrink-0">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                         </svg>
@@ -66,21 +94,35 @@
                 </div>
             </div>
 
-            <!-- 3. New Car Loan (Soft Blue Gradient + Car) -->
-            <div class="bg-gradient-to-br from-[#EFF6FF] to-[#DBEAFE] border border-blue-100/90 rounded-2xl p-3.5 flex flex-col justify-between shadow-2xs hover:shadow-md transition-all">
+            <!-- 3. New Car Loan (Modern Car in Showroom) -->
+            <div class="bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
-                    <div class="w-10 h-10 rounded-xl bg-white shadow-2xs flex items-center justify-center text-[#1677FF] mb-2.5">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10 M16 8h4l3 3v5h-7V8z"/>
-                        </svg>
+                    <!-- Product Image -->
+                    <div class="relative h-28 sm:h-32 w-full overflow-hidden bg-slate-100">
+                        <img src="{{ asset('images/new-car.jpg') }}" 
+                             alt="New Car Loan with 100% On-road Funding" 
+                             class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <span class="absolute top-2 left-2 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-white/90 text-[#062B59] shadow-xs">
+                            100% Funding
+                        </span>
+                        <span class="absolute bottom-1.5 left-2 text-[10px] font-bold text-emerald-300">
+                            Lowest Rate
+                        </span>
                     </div>
-                    <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">New Car Loan</h3>
-                    <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-3">Drive your dream car with low rates</p>
+
+                    <!-- Details -->
+                    <div class="p-3 sm:p-3.5">
+                        <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">New Car Loan</h3>
+                        <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-2 line-clamp-2">Drive your dream car with low rates</p>
+                    </div>
                 </div>
-                <div class="flex justify-end">
+
+                <div class="p-3 pt-0 flex items-center justify-between">
+                    <span class="text-[11px] font-bold text-[#1677FF]">From 8.65%</span>
                     <a href="{{ route('loans.new-car') }}" 
                        aria-label="New Car Loan Details"
-                       class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all">
+                       class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all flex-shrink-0">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                         </svg>
@@ -88,21 +130,35 @@
                 </div>
             </div>
 
-            <!-- 4. Used Car Loan (Soft Indigo Gradient + Key) -->
-            <div class="bg-gradient-to-br from-[#F5F3FF] to-[#EDE9FE] border border-purple-100/90 rounded-2xl p-3.5 flex flex-col justify-between shadow-2xs hover:shadow-md transition-all">
+            <!-- 4. Used Car Loan (Quality Certified Pre-owned Car) -->
+            <div class="bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
-                    <div class="w-10 h-10 rounded-xl bg-white shadow-2xs flex items-center justify-center text-[#8B5CF6] mb-2.5">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
-                        </svg>
+                    <!-- Product Image -->
+                    <div class="relative h-28 sm:h-32 w-full overflow-hidden bg-slate-100">
+                        <img src="{{ asset('images/used-car.jpg') }}" 
+                             alt="Used Car Loan with Instant Valuation" 
+                             class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <span class="absolute top-2 left-2 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-white/90 text-[#062B59] shadow-xs">
+                            Up to 90%
+                        </span>
+                        <span class="absolute bottom-1.5 left-2 text-[10px] font-bold text-emerald-300">
+                            Fast RC Transfer
+                        </span>
                     </div>
-                    <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">Used Car Loan</h3>
-                    <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-3">Quality certified pre-owned deals</p>
+
+                    <!-- Details -->
+                    <div class="p-3 sm:p-3.5">
+                        <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">Used Car Loan</h3>
+                        <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-2 line-clamp-2">Quality certified pre-owned deals</p>
+                    </div>
                 </div>
-                <div class="flex justify-end">
+
+                <div class="p-3 pt-0 flex items-center justify-between">
+                    <span class="text-[11px] font-bold text-[#1677FF]">From 11.50%</span>
                     <a href="{{ route('loans.used-car') }}" 
                        aria-label="Used Car Loan Details"
-                       class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all">
+                       class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all flex-shrink-0">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                         </svg>
@@ -110,21 +166,35 @@
                 </div>
             </div>
 
-            <!-- 5. Doctor Loan (Soft Rose Gradient + Stethoscope) -->
-            <div class="bg-gradient-to-br from-[#FFF1F2] to-[#FFE4E6] border border-rose-100/90 rounded-2xl p-3.5 flex flex-col justify-between shadow-2xs hover:shadow-md transition-all">
+            <!-- 5. Doctor Loan (Indian Doctor in Medical Clinic) -->
+            <div class="bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
-                    <div class="w-10 h-10 rounded-xl bg-white shadow-2xs flex items-center justify-center text-[#E11D48] mb-2.5">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z M12 3v4 M10 5h4"/>
-                        </svg>
+                    <!-- Product Image -->
+                    <div class="relative h-28 sm:h-32 w-full overflow-hidden bg-slate-100">
+                        <img src="{{ asset('images/doctor.jpg') }}" 
+                             alt="Doctor Loan for Medical Professionals" 
+                             class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <span class="absolute top-2 left-2 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-white/90 text-[#062B59] shadow-xs">
+                            Up to ₹50L
+                        </span>
+                        <span class="absolute bottom-1.5 left-2 text-[10px] font-bold text-emerald-300">
+                            Zero Collateral
+                        </span>
                     </div>
-                    <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">Doctor Loan</h3>
-                    <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-3">Special credit for medical doctors</p>
+
+                    <!-- Details -->
+                    <div class="p-3 sm:p-3.5">
+                        <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">Doctor Loan</h3>
+                        <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-2 line-clamp-2">Special credit for medical doctors</p>
+                    </div>
                 </div>
-                <div class="flex justify-end">
+
+                <div class="p-3 pt-0 flex items-center justify-between">
+                    <span class="text-[11px] font-bold text-[#1677FF]">From 9.99%</span>
                     <a href="{{ route('loans.doctor') }}" 
                        aria-label="Doctor Loan Details"
-                       class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all">
+                       class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all flex-shrink-0">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                         </svg>
@@ -132,21 +202,35 @@
                 </div>
             </div>
 
-            <!-- 6. CA Loan (Soft Slate/Violet Gradient + Calculator) -->
-            <div class="bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9] border border-slate-200/90 rounded-2xl p-3.5 flex flex-col justify-between shadow-2xs hover:shadow-md transition-all">
+            <!-- 6. CA Loan (Indian Chartered Accountant in Office) -->
+            <div class="bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
-                    <div class="w-10 h-10 rounded-xl bg-white shadow-2xs flex items-center justify-center text-[#062B59] mb-2.5">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                        </svg>
+                    <!-- Product Image -->
+                    <div class="relative h-28 sm:h-32 w-full overflow-hidden bg-slate-100">
+                        <img src="{{ asset('images/ca-professional.jpg') }}" 
+                             alt="CA Loan for Chartered Accountants" 
+                             class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <span class="absolute top-2 left-2 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-white/90 text-[#062B59] shadow-xs">
+                            Up to ₹40L
+                        </span>
+                        <span class="absolute bottom-1.5 left-2 text-[10px] font-bold text-emerald-300">
+                            Zero Fee Scheme
+                        </span>
                     </div>
-                    <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">CA Loan</h3>
-                    <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-3">Exclusive credit for qualified CAs</p>
+
+                    <!-- Details -->
+                    <div class="p-3 sm:p-3.5">
+                        <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">CA Loan</h3>
+                        <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-2 line-clamp-2">Exclusive credit for qualified CAs</p>
+                    </div>
                 </div>
-                <div class="flex justify-end">
+
+                <div class="p-3 pt-0 flex items-center justify-between">
+                    <span class="text-[11px] font-bold text-[#1677FF]">From 10.25%</span>
                     <a href="{{ route('loans.ca') }}" 
                        aria-label="CA Loan Details"
-                       class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all">
+                       class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all flex-shrink-0">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                         </svg>
