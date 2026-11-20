@@ -15,10 +15,19 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('mobile', 20)->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('employee_id', 30)->unique()->nullable();
+            $table->string('designation', 100)->nullable();
+            $table->string('department', 100)->nullable();
+            $table->string('role', 50)->default('lead_executive'); // super_admin, admin, manager, team_leader, lead_executive, calling_executive, support_executive
+            $table->date('joining_date')->nullable();
+            $table->string('account_status', 20)->default('active'); // active, inactive, suspended
+            $table->string('profile_photo')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

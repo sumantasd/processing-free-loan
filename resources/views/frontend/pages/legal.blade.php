@@ -20,7 +20,11 @@
     <section class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-slate-700 text-sm sm:text-base leading-relaxed space-y-8">
             
-            @if($type === 'privacy')
+            @if(!empty($custom_content))
+                <div class="prose max-w-none text-slate-700 leading-relaxed">
+                    {!! $custom_content !!}
+                </div>
+            @elseif($type === 'privacy')
                 <div>
                     <h2 class="text-xl font-bold text-[#062B59] mb-3">1. Information Collection</h2>
                     <p>ProcessingFreeLoan.com collects information you voluntarily provide when submitting a loan enquiry, including your name, contact phone number, email address, loan requirement, income details, and residential city. We also log standard technical data such as IP address and browser type for fraud prevention.</p>

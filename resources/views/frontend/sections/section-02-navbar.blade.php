@@ -131,17 +131,15 @@
                     </svg>
                 </a>
 
-                <!-- Icon 2: Loan Application / Lead Form Icon (File Pen Line) -->
-                <button type="button" 
-                        @click="openEnquiry()"
-                        aria-label="Apply for Loan"
-                        title="Apply for Loan"
-                        class="w-9 h-9 rounded-full bg-white hover:bg-blue-50 text-slate-700 hover:text-[#1677FF] border border-slate-200/80 flex items-center justify-center transition-colors">
+                <!-- Icon 2: User Account / Portal Icon (Per Primary Mobile Reference Image) -->
+                <a href="{{ route('user.login') }}" 
+                   aria-label="User Portal Login"
+                   title="User Portal"
+                   class="w-9 h-9 rounded-full bg-white hover:bg-blue-50 text-slate-700 hover:text-[#1677FF] border border-slate-200/80 flex items-center justify-center transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                     </svg>
-                </button>
+                </a>
 
                 <!-- Icon 3: Hamburger Menu Toggle -->
                 <button type="button" 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HomepageSection;
 use App\Services\FintechDataService;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,11 @@ class HomeController extends Controller
         $testimonials = FintechDataService::getTestimonials();
         $faqs = FintechDataService::getFaqs();
         $articles = FintechDataService::getArticles();
+        try {
+            $homepageSections = HomepageSection::all()->keyBy('section_key');
+        } catch (\Throwable $e) {
+            $homepageSections = collect();
+        }
 
         return view('frontend.pages.home', compact(
             'brand',
@@ -28,7 +34,8 @@ class HomeController extends Controller
             'howItWorks',
             'testimonials',
             'faqs',
-            'articles'
+            'articles',
+            'homepageSections'
         ));
     }
 }

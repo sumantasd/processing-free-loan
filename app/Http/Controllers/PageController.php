@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use App\Services\FintechDataService;
 use Illuminate\Http\Request;
 
@@ -28,33 +29,39 @@ class PageController extends Controller
     public function privacy()
     {
         $brand = FintechDataService::getBrandConfig();
+        $dbPage = Page::where('slug', 'privacy-policy')->first();
         return view('frontend.pages.legal', [
             'brand' => $brand,
-            'title' => 'Privacy Policy',
+            'title' => $dbPage?->title ?? 'Privacy Policy',
             'type' => 'privacy',
-            'updated_at' => 'January 15, 2025'
+            'custom_content' => $dbPage?->content,
+            'updated_at' => $dbPage?->updated_at ? $dbPage->updated_at->format('F d, Y') : 'January 15, 2025'
         ]);
     }
 
     public function terms()
     {
         $brand = FintechDataService::getBrandConfig();
+        $dbPage = Page::where('slug', 'terms-and-conditions')->first();
         return view('frontend.pages.legal', [
             'brand' => $brand,
-            'title' => 'Terms and Conditions',
+            'title' => $dbPage?->title ?? 'Terms and Conditions',
             'type' => 'terms',
-            'updated_at' => 'January 15, 2025'
+            'custom_content' => $dbPage?->content,
+            'updated_at' => $dbPage?->updated_at ? $dbPage->updated_at->format('F d, Y') : 'January 15, 2025'
         ]);
     }
 
     public function disclaimer()
     {
         $brand = FintechDataService::getBrandConfig();
+        $dbPage = Page::where('slug', 'disclaimer')->first();
         return view('frontend.pages.legal', [
             'brand' => $brand,
-            'title' => 'Financial Services Disclaimer',
+            'title' => $dbPage?->title ?? 'Financial Services Disclaimer',
             'type' => 'disclaimer',
-            'updated_at' => 'January 15, 2025'
+            'custom_content' => $dbPage?->content,
+            'updated_at' => $dbPage?->updated_at ? $dbPage->updated_at->format('F d, Y') : 'January 15, 2025'
         ]);
     }
 }

@@ -6,7 +6,7 @@ class FintechDataService
 {
     public static function getBrandConfig(): array
     {
-        return [
+        $config = [
             'name' => 'Processing Free Loan',
             'tagline' => 'LOAN WITHOUT PROCESSING FEE',
             'domain' => 'ProcessingFreeLoan.com',
@@ -29,11 +29,37 @@ class FintechDataService
             ],
             'disclaimer' => 'ProcessingFreeLoan.com (Unit Of Findeal Financial Private Limited) is a financial loan aggregator and comparison platform assisting Indian borrowers with loan discovery from RBI-regulated Banks and NBFCs. We are not a direct lender. Processing fee waiver offers are subject to individual lender policies, credit evaluation, and specific promo schemes. Final interest rates and terms are solely determined by the lending institution.'
         ];
+
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('website_settings')) {
+                $dbSettings = \App\Models\WebsiteSetting::pluck('value', 'key')->toArray();
+                if (!empty($dbSettings)) {
+                    if (!empty($dbSettings['brand_name'])) $config['name'] = $dbSettings['brand_name'];
+                    if (!empty($dbSettings['brand_tagline'])) $config['tagline'] = $dbSettings['brand_tagline'];
+                    if (!empty($dbSettings['company_identity'])) $config['company_identity'] = $dbSettings['company_identity'];
+                    if (!empty($dbSettings['header_phone'])) {
+                        $config['phone'] = $dbSettings['header_phone'];
+                        $config['phone_url'] = 'tel:' . preg_replace('/[^\+0-9]/', '', $dbSettings['header_phone']);
+                    }
+                    if (!empty($dbSettings['header_email'])) {
+                        $config['email'] = $dbSettings['header_email'];
+                        $config['email_url'] = 'mailto:' . $dbSettings['header_email'];
+                    }
+                    if (!empty($dbSettings['footer_address'])) $config['registered_office'] = $dbSettings['footer_address'];
+                    if (!empty($dbSettings['footer_disclaimer'])) $config['disclaimer'] = $dbSettings['footer_disclaimer'];
+                    if (!empty($dbSettings['google_maps_url'])) $config['google_maps_url'] = $dbSettings['google_maps_url'];
+                    if (!empty($dbSettings['developer_name'])) $config['developer_name'] = $dbSettings['developer_name'];
+                    if (!empty($dbSettings['developer_url'])) $config['developer_url'] = $dbSettings['developer_url'];
+                }
+            }
+        } catch (\Throwable $e) {}
+
+        return $config;
     }
 
     public static function getLoanProducts(): array
     {
-        return [
+        $products = [
             'personal-loan' => [
                 'slug' => 'personal-loan',
                 'title' => 'Personal Loan',
@@ -281,12 +307,39 @@ class FintechDataService
                 ]
             ]
         ];
+
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('loan_products')) {
+                $dbProducts = \App\Models\LoanProduct::orderBy('display_order')->get();
+                if ($dbProducts->isNotEmpty()) {
+                    foreach ($dbProducts as $p) {
+                        if (!$p->is_published) {
+                            unset($products[$p->slug]);
+                            continue;
+                        }
+                        if (isset($products[$p->slug])) {
+                            if ($p->title) $products[$p->slug]['title'] = $p->title;
+                            if ($p->tagline) $products[$p->slug]['tagline'] = $p->tagline;
+                            if ($p->interest_rate) $products[$p->slug]['interest_rate'] = $p->interest_rate;
+                            if ($p->amount_range) $products[$p->slug]['amount_range'] = $p->amount_range;
+                            if ($p->min_amount) $products[$p->slug]['min_amount'] = (float)$p->min_amount;
+                            if ($p->max_amount) $products[$p->slug]['max_amount'] = (float)$p->max_amount;
+                            if ($p->tenure) $products[$p->slug]['tenure'] = $p->tenure;
+                            if ($p->processing_fee) $products[$p->slug]['processing_fee'] = $p->processing_fee;
+                            if ($p->description) $products[$p->slug]['description'] = $p->description;
+                        }
+                    }
+                }
+            }
+        } catch (\Throwable $e) {}
+
+        return $products;
     }
 
     public static function getAllLenders(): array
     {
         // Strictly the 16 NBFCs and 7 Banks from the provided Excel database
-        return [
+        $lenders = [
             // 16 NBFCs
             [
                 'name' => 'Bajaj Finance',
@@ -590,6 +643,33 @@ class FintechDataService
                 'processing_fee_offer' => 'Zero processing fee offers during quarterly promotions'
             ]
         ];
+
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('lenders')) {
+                $dbLenders = \App\Models\Lender::orderBy('display_order')->get();
+                if ($dbLenders->isNotEmpty()) {
+                    $lenderMap = [];
+                    foreach ($lenders as $item) {
+                        $lenderMap[$item['slug']] = $item;
+                    }
+                    foreach ($dbLenders as $dl) {
+                        if (!$dl->is_published) {
+                            unset($lenderMap[$dl->slug]);
+                            continue;
+                        }
+                        if (isset($lenderMap[$dl->slug])) {
+                            if ($dl->name) $lenderMap[$dl->slug]['name'] = $dl->name;
+                            if ($dl->min_interest) $lenderMap[$dl->slug]['min_interest'] = $dl->min_interest;
+                            if ($dl->approval_speed) $lenderMap[$dl->slug]['approval_speed'] = $dl->approval_speed;
+                            if ($dl->processing_fee_waiver) $lenderMap[$dl->slug]['processing_fee_waiver'] = $dl->processing_fee_waiver;
+                        }
+                    }
+                    return array_values($lenderMap);
+                }
+            }
+        } catch (\Throwable $e) {}
+
+        return $lenders;
     }
 
     public static function getLenderBySlug(string $slug): ?array
@@ -707,7 +787,7 @@ class FintechDataService
 
     public static function getTestimonials(): array
     {
-        return [
+        $testimonials = [
             [
                 'name' => 'Subrata Mukherjee',
                 'city' => 'Kolkata, West Bengal',
@@ -769,11 +849,41 @@ class FintechDataService
                 'quote' => 'Very reliable platform for salaried employees. The team explained the entire EMI repayment structure clearly, and I received the funds directly in my account in 36 hours.'
             ]
         ];
+
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('testimonials')) {
+                $dbTestimonials = \App\Models\Testimonial::where('is_active', true)->orderBy('display_order')->get();
+                if ($dbTestimonials->isNotEmpty()) {
+                    $list = [];
+                    foreach ($dbTestimonials as $t) {
+                        $list[] = [
+                            'id' => $t->id,
+                            'name' => $t->customer_name,
+                            'city' => $t->location ?: 'West Bengal, India',
+                            'role' => $t->role ?: '',
+                            'avatar' => $t->avatar_url,
+                            'initials' => $t->initials,
+                            'loan_type' => $t->loan_category ?: 'Personal Loan',
+                            'rating' => (int) ($t->rating ?: 5),
+                            'quote' => $t->review,
+                            'is_verified' => (bool) $t->is_verified,
+                        ];
+                    }
+                    return $list;
+                }
+            }
+        } catch (\Throwable $e) {}
+
+        return array_map(function ($item) {
+            $words = preg_split('/\s+/', trim(preg_replace('/^(dr\.|mr\.|mrs\.|ms\.|ca\.)\s+/i', '', $item['name'])));
+            $item['initials'] = strtoupper(substr($words[0] ?? 'P', 0, 1) . substr($words[1] ?? 'F', 0, 1));
+            return $item;
+        }, $testimonials);
     }
 
     public static function getFaqs(): array
     {
-        return [
+        $faqs = [
             [
                 'question' => 'Is there any processing fee for a loan?',
                 'answer' => 'We actively partner with leading Banks & NBFCs to offer promotional loan schemes featuring Zero Processing Fee for eligible salaried, business, doctor, and CA profiles. However, standard processing fee policies vary by individual lending institution and credit risk category. When applicable, all fees are disclosed upfront with zero hidden charges.'
@@ -807,11 +917,29 @@ class FintechDataService
                 'answer' => 'Final loan sanction and disbursement are subject to the independent underwriting, risk evaluation, and KYC verification conducted by the respective RBI-regulated Bank or NBFC. We assist you in finding the most suitable lender match to maximize approval chances.'
             ]
         ];
+
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('faqs')) {
+                $dbFaqs = \App\Models\Faq::where('is_active', true)->orderBy('display_order')->get();
+                if ($dbFaqs->isNotEmpty()) {
+                    $list = [];
+                    foreach ($dbFaqs as $f) {
+                        $list[] = [
+                            'question' => $f->question,
+                            'answer' => $f->answer,
+                        ];
+                    }
+                    return $list;
+                }
+            }
+        } catch (\Throwable $e) {}
+
+        return $faqs;
     }
 
     public static function getArticles(): array
     {
-        return [
+        $articles = [
             [
                 'slug' => 'how-to-improve-loan-eligibility',
                 'title' => 'How to Improve Your Loan Eligibility in 2026',
@@ -843,6 +971,30 @@ class FintechDataService
                 'content' => 'Equated Monthly Installment (EMI) consists of both principal repayment and interest payout. Using the reducing balance formula [P x R x (1+R)^N] / [(1+R)^N - 1], borrowers pay higher interest in early installments. Making part-prepayments during the initial third of your loan tenure drastically slashes total interest.'
             ]
         ];
+
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('blog_posts')) {
+                $dbBlogs = \App\Models\BlogPost::where('is_published', true)->latest()->get();
+                if ($dbBlogs->isNotEmpty()) {
+                    $list = [];
+                    foreach ($dbBlogs as $b) {
+                        $list[] = [
+                            'slug' => $b->slug,
+                            'title' => $b->title,
+                            'category' => $b->category ?: 'Financial Guide',
+                            'read_time' => '5 min read',
+                            'date' => $b->created_at ? $b->created_at->format('M d, Y') : date('M d, Y'),
+                            'image' => $b->featured_image ?: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&auto=format&fit=crop&q=80',
+                            'excerpt' => $b->excerpt,
+                            'content' => $b->content,
+                        ];
+                    }
+                    return $list;
+                }
+            }
+        } catch (\Throwable $e) {}
+
+        return $articles;
     }
 
     public static function getArticleBySlug(string $slug): ?array

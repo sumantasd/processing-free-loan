@@ -42,26 +42,45 @@ class LeadController extends Controller
 
         try {
             $data = $validator->validated();
-            $data['ip_address'] = $request->ip();
-            $data['source_url'] = $request->header('referer') ?? url()->previous();
-            $data['status'] = 'new';
+            $refCode = 'PFL-' . date('y') . date('m') . '-' . rand(1000, 9999);
 
-            $lead = Lead::create($data);
+            $lead = Lead::create([
+                'full_name' => $data['full_name'],
+                'mobile' => $data['mobile'],
+                'email' => $data['email'] ?? null,
+                'loan_category' => $data['loan_category'],
+                'loan_amount' => $data['loan_amount'] ?? null,
+                'monthly_income' => $data['monthly_income'] ?? null,
+                'employment_type' => $data['employment_type'] ?? null,
+                'city' => $data['city'] ?? null,
+                'pincode' => $data['pincode'] ?? null,
+                'preferred_bank' => $data['preferred_bank'] ?? null,
+                'consent' => true,
+                'status' => 'new',
+                'lead_source' => 'website_form',
+                'reference_code' => $refCode,
+                'ip_address' => $request->ip(),
+                'source_url' => $request->header('referer') ?? url()->previous(),
+            ]);
+
+            \App\Models\LeadActivity::create([
+                'lead_id' => $lead->id,
+                'activity_type' => 'lead_created',
+                'description' => "Lead created via website form with reference {$refCode}",
+            ]);
 
             return response()->json([
                 'success' => true,
                 'lead_id' => $lead->id,
-                'reference_code' => 'PFL-' . str_pad($lead->id, 6, '0', STR_PAD_LEFT),
+                'reference_code' => $lead->reference_code,
                 'message' => 'Congratulations! Your loan enquiry has been registered successfully with Zero Processing Fee priority. One of our senior loan advisors will contact you shortly.',
             ], 201);
         } catch (\Exception $e) {
-            // Safe fallback during phase 1 demo/development
+            \Illuminate\Support\Facades\Log::error('Lead submission error: ' . $e->getMessage());
             return response()->json([
-                'success' => true,
-                'lead_id' => rand(1001, 9999),
-                'reference_code' => 'PFL-DEMO-' . rand(10000, 99999),
-                'message' => 'Your loan application enquiry has been received in demo mode. Our team will get in touch with you!',
-            ], 200);
+                'success' => false,
+                'message' => 'Unable to submit enquiry at this moment. Please call our helpline directly: +91 7074906556',
+            ], 500);
         }
     }
 }
