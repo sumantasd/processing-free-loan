@@ -41,7 +41,14 @@
                                 </div>
                                 <div>
                                     <strong class="text-[#062B59] block">Registered Office</strong>
-                                    <span class="text-xs text-slate-500 leading-relaxed">{{ $brand['address'] ?? 'Salt Lake Sector V, Kolkata, West Bengal 700091, India' }}</span>
+                                    <span class="text-xs text-slate-600 leading-relaxed block">{{ $brand['registered_office'] ?? $brand['address'] ?? 'Khata No. 3429, Premer Danga, Near PDB High School, Khattimari, Cooch Behar, West Bengal – 736171, India.' }}</span>
+                                    <a href="{{ $brand['google_maps_url'] ?? 'https://maps.google.com/?q=Premer+Danga+Khattimari+Cooch+Behar+West+Bengal+736171' }}" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="inline-flex items-center gap-1.5 mt-2 px-3 py-1.5 rounded-lg bg-blue-50 text-[#1677FF] hover:bg-blue-100 text-xs font-bold transition-colors">
+                                        <span>Get Directions</span>
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                    </a>
                                 </div>
                             </div>
 
@@ -50,9 +57,9 @@
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                                 </div>
                                 <div>
-                                    <strong class="text-[#062B59] block">Phone & WhatsApp</strong>
-                                    <a href="tel:{{ str_replace(' ', '', $brand['phone'] ?? '+919876543210') }}" class="text-xs text-[#1677FF] font-semibold hover:underline block">
-                                        {{ $brand['phone'] ?? '+91 98765 43210' }}
+                                    <strong class="text-[#062B59] block">Customer Helpline</strong>
+                                    <a href="{{ $brand['phone_url'] ?? 'tel:+917074906556' }}" class="text-xs text-[#1677FF] font-semibold hover:underline block">
+                                        {{ $brand['phone'] ?? '+91 7074906556' }}
                                     </a>
                                 </div>
                             </div>
@@ -62,9 +69,9 @@
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                                 </div>
                                 <div>
-                                    <strong class="text-[#062B59] block">Official Email</strong>
-                                    <a href="mailto:{{ $brand['email'] ?? 'info@processingfreeloan.com' }}" class="text-xs text-[#1677FF] font-semibold hover:underline block">
-                                        {{ $brand['email'] ?? 'info@processingfreeloan.com' }}
+                                    <strong class="text-[#062B59] block">Support Email</strong>
+                                    <a href="{{ $brand['email_url'] ?? 'mailto:support@processingfreeloan.com' }}" class="text-xs text-[#1677FF] font-semibold hover:underline block">
+                                        {{ $brand['email'] ?? 'support@processingfreeloan.com' }}
                                     </a>
                                 </div>
                             </div>

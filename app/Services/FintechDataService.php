@@ -9,18 +9,26 @@ class FintechDataService
         return [
             'name' => 'Processing Free Loan',
             'tagline' => 'LOAN WITHOUT PROCESSING FEE',
-            'domain' => 'https://processingfreeloan.com',
-            'phone' => '+91 98765 43210',
-            'email' => 'info@processingfreeloan.com',
+            'domain' => 'ProcessingFreeLoan.com',
+            'website_url' => 'https://processingfreeloan.com/',
+            'company_identity' => 'Unit Of Findeal Financial Private Limited',
+            'registered_office' => 'Khata No. 3429, Premer Danga, Near PDB High School, Khattimari, Cooch Behar, West Bengal – 736171, India.',
+            'address' => 'Khata No. 3429, Premer Danga, Near PDB High School, Khattimari, Cooch Behar, West Bengal – 736171, India.',
+            'google_maps_url' => 'https://maps.google.com/?q=Premer+Danga+Khattimari+Cooch+Behar+West+Bengal+736171',
+            'phone' => '+91 7074906556',
+            'phone_url' => 'tel:+917074906556',
+            'email' => 'support@processingfreeloan.com',
+            'email_url' => 'mailto:support@processingfreeloan.com',
             'support_hours' => 'Mon - Sat: 9:30 AM - 7:00 PM',
-            'address' => 'Salt Lake Sector V, Kolkata, West Bengal 700091, India',
+            'developer_name' => 'Tech Googly',
+            'developer_url' => 'https://techgoogly.com/',
             'social' => [
                 'facebook' => 'https://facebook.com/processingfreeloan',
                 'instagram' => 'https://instagram.com/processingfreeloan',
                 'youtube' => 'https://youtube.com/@processingfreeloan',
                 'linkedin' => 'https://linkedin.com/company/processingfreeloan',
             ],
-            'disclaimer' => 'ProcessingFreeLoan.com is a financial marketplace and loan aggregator assisting consumers in discovering and comparing loan products from RBI-regulated Banks and NBFCs. We are not a direct lender. Processing fee waiver offers are subject to individual lender policies, credit evaluation, and specific promo schemes. Final interest rates and terms are solely determined by the lending institution.'
+            'disclaimer' => 'ProcessingFreeLoan.com (Unit Of Findeal Financial Private Limited) is a financial loan aggregator and comparison platform assisting Indian borrowers with loan discovery from RBI-regulated Banks and NBFCs. We are not a direct lender. Processing fee waiver offers are subject to individual lender policies, credit evaluation, and specific promo schemes. Final interest rates and terms are solely determined by the lending institution.'
         ];
     }
 
@@ -41,31 +49,31 @@ class FintechDataService
                 'interest_rate' => 'Starting @ 10.49% p.a.',
                 'tenure' => '12 to 72 Months',
                 'processing_fee' => 'Zero Processing Fee Offers Available*',
-                'description' => 'Cover unexpected emergencies, home renovation, travel, or medical expenses with collateral-free personal loans from top Banks and NBFCs at lowest interest rates.',
+                'description' => 'Cover medical expenses, family milestones, travel, or home upgrades with collateral-free personal loans from leading Banks and NBFCs at competitive interest rates.',
                 'key_benefits' => [
-                    'Zero processing fee promotional schemes',
-                    'Minimal documentation & 100% paperless digital journey',
+                    'Zero processing fee promotional schemes on eligible profiles',
+                    '100% paperless digital verification process',
                     'Flexible repayment tenure up to 6 years',
-                    'Quick disbursement directly to your bank account within 24 hours',
-                    'No collateral or guarantor required'
+                    'Direct bank disbursement within 24 to 48 hours',
+                    'No collateral or physical guarantor required'
                 ],
                 'eligibility' => [
                     'Nationality: Resident Indian Citizen',
                     'Age: 21 to 58 years at loan maturity',
-                    'Monthly Net Salary: Min ₹25,000 per month (metro) / ₹20,000 (non-metro)',
-                    'Employment: Minimum 1 year continuous work experience (6 months with current employer)',
+                    'Monthly Net Salary: Min ₹20,000/month',
+                    'Employment: Minimum 1 year continuous work experience',
                     'CIBIL Score: 680+ for fastest zero-fee approval'
                 ],
                 'documents' => [
-                    'Identity Proof: PAN Card (Mandatory), Aadhaar Card, Passport or Voter ID',
-                    'Address Proof: Aadhaar Card, Utility Bills (Electricity/Water < 2 months old), Rent Agreement',
-                    'Income Proof: Latest 3 months salary slips, Form 16 / ITR for salaried',
-                    'Banking: Last 6 months bank statement reflecting salary credits',
-                    'Photographs: 1 Passport size photograph or selfie verification'
+                    'Identity Proof: PAN Card (Mandatory), Aadhaar Card',
+                    'Address Proof: Aadhaar Card, Recent Utility Bill, or Rent Agreement',
+                    'Income Proof: Latest 3 months salary slips, Form 16 / ITR',
+                    'Banking: Last 6 months bank statement showing regular salary credits',
+                    'Photographs: 1 Passport size photograph or digital selfie'
                 ],
                 'suitable_lenders' => [
-                    'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'IndusInd Bank', 'IDFC Bank', 'Bandhan Bank', 'YES Bank',
-                    'Bajaj Finance', 'Tata Capital', 'Poonawalla Fincorp', 'Piramal Finance', 'Aditya Birla', 'SMFG India', 'Finnable', 'InCred'
+                    'Bajaj Finance', 'Cholamandalam', 'Tata Capital', 'Poonawalla Fincorp', 'Piramal Finance', 'Aditya Birla', 'SMFG India', 'Finnable', 'InCred',
+                    'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'IndusInd Bank', 'IDFC Bank', 'Bandhan Bank', 'YES Bank'
                 ]
             ],
             'business-loan' => [
@@ -82,30 +90,31 @@ class FintechDataService
                 'interest_rate' => 'Starting @ 11.99% p.a.',
                 'tenure' => '12 to 60 Months',
                 'processing_fee' => 'Special Zero Processing Fee Waivers*',
-                'description' => 'Expand working capital, purchase machinery, stock inventory, or manage cash flow seamlessly with unsecured business loans tailored for Indian MSMEs and enterprises.',
+                'description' => 'Expand working capital, purchase machinery, stock inventory, or manage cash flow seamlessly with unsecured business finance tailored for Indian MSMEs.',
                 'key_benefits' => [
-                    'Unsecured business finance with zero asset mortgaging',
+                    'Collateral-free business credit with no property mortgage',
                     'Exclusive processing fee discount & zero-fee lender partnerships',
-                    'Overdraft & term loan facilities available',
-                    'Speedy sanction based on GST and banking turnover',
-                    'Tax benefits on interest paid for business expansion'
+                    'Overdraft and term loan options available',
+                    'Fast sanction based on GST and banking turnover',
+                    'Tax deductible interest under business operational expenses'
                 ],
                 'eligibility' => [
                     'Business Entity: Sole Proprietorship, Partnership, LLP, Pvt Ltd',
                     'Business Vintage: Minimum 2 to 3 years in continuous operation',
-                    'Annual Turnover: Minimum ₹25 Lakhs audited turnover',
+                    'Annual Turnover: Minimum ₹20 Lakhs audited turnover',
                     'Applicant Age: 24 to 65 years',
                     'Credit Health: Business vintage & promoter CIBIL score 700+'
                 ],
                 'documents' => [
-                    'Entity Proof: GST Registration, Trade License, MSME/Udyam Certificate, Partnership Deed/COI',
+                    'Entity Proof: GST Registration, Trade License, MSME/Udyam Certificate',
                     'Financials: Audited Balance Sheet & P&L statements for last 2 years with CA seal',
-                    'Tax Documents: Last 12 months GST returns (GSTR-3B) and 2 years ITR with computation',
-                    'Bank Statements: Last 12 months primary current account banking statements',
+                    'Tax Documents: Last 12 months GST returns (GSTR-3B) and 2 years ITR',
+                    'Bank Statements: Last 12 months primary operative current account statements',
                     'KYC: PAN Card & Aadhaar of all promoters/directors'
                 ],
                 'suitable_lenders' => [
-                    'Bajaj Finance', 'Cholamandalam', 'Tata Capital', 'Poonawalla Fincorp', 'L & T Finance', 'Aditya Birla', 'Piramal Finance', 'Godrej Finance', 'SMFG India', 'Axis Finance', 'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'IndusInd Bank', 'IDFC Bank', 'Bandhan Bank', 'YES Bank'
+                    'Bajaj Finance', 'Cholamandalam', 'Tata Capital', 'Poonawalla Fincorp', 'L & T Finance', 'Aditya Birla', 'Piramal Finance', 'Godrej Finance', 'SMFG India', 'Axis Finance',
+                    'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'IndusInd Bank', 'IDFC Bank', 'Bandhan Bank', 'YES Bank'
                 ]
             ],
             'new-car-loan' => [
@@ -122,11 +131,11 @@ class FintechDataService
                 'interest_rate' => 'Starting @ 8.65% p.a.',
                 'tenure' => '12 to 84 Months',
                 'processing_fee' => 'Zero Processing Fee on Selected Models*',
-                'description' => 'Get behind the wheel of your dream vehicle with competitive interest rates, up to 100% on-road funding, and zero processing fee festive promotions.',
+                'description' => 'Drive your dream hatchback, sedan, or SUV with competitive interest rates, up to 100% on-road funding, and zero processing fee festive promotions.',
                 'key_benefits' => [
                     'Up to 100% on-road financing (ex-showroom + insurance + road tax)',
                     'Tie-ups with leading automobile dealerships pan-India',
-                    'Extended repayment tenures up to 7 years for lowest monthly EMIs',
+                    'Extended repayment tenures up to 7 years for low monthly EMIs',
                     'Instant in-principle sanction with digital KYC verification',
                     'Pre-approved car loan limits for existing bank account holders'
                 ],
@@ -145,8 +154,8 @@ class FintechDataService
                     'Passport photograph & signed application'
                 ],
                 'suitable_lenders' => [
-                    'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'IDFC Bank', 'YES Bank', 'IndusInd Bank', 'Bandhan Bank',
-                    'Cholamandalam', 'HDB Finance', 'Mahindra Finance', 'Tata Capital', 'Poonawalla Fincorp', 'Indostar Capital', 'Muthoot Capital'
+                    'Cholamandalam', 'HDB Finance', 'Mahindra Finance', 'Poonawalla Fincorp', 'Tata Capital', 'Indostar Capital', 'Muthoot Capital',
+                    'Axis Bank', 'HDFC Bank', 'ICICI Bank', 'IDFC Bank', 'YES Bank', 'IndusInd Bank', 'Bandhan Bank'
                 ]
             ],
             'used-car-loan' => [
@@ -163,10 +172,10 @@ class FintechDataService
                 'interest_rate' => 'Starting @ 11.50% p.a.',
                 'tenure' => '12 to 60 Months',
                 'processing_fee' => 'Discounted / Free Processing Schemes*',
-                'description' => 'Own a certified pre-owned hatchback, sedan, or SUV with quick vehicle evaluation, hassle-free RC transfer assistance, and customized loan packages.',
+                'description' => 'Own a certified pre-owned car with quick vehicle valuation, RC transfer assistance, and customized loan packages with zero processing fee offers.',
                 'key_benefits' => [
                     'Financing up to 90%–100% of fair market vehicle valuation',
-                    'Complete assistance with Regional Transport Office (RTO) hypothecation and RC transfer',
+                    'Assistance with Regional Transport Office (RTO) transfer & hypothecation',
                     'Wide coverage across hatchbacks, sedans, luxury cars and SUVs',
                     'Flexible tenure options up to 5 years',
                     'Doorstep vehicle inspection and fast loan disbursement'
@@ -187,7 +196,7 @@ class FintechDataService
                 ],
                 'suitable_lenders' => [
                     'Cholamandalam', 'HDB Finance', 'Mahindra Finance', 'Poonawalla Fincorp', 'Tata Capital', 'Indostar Capital', 'Muthoot Capital',
-                    'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'IDFC Bank', 'YES Bank', 'IndusInd Bank', 'Bandhan Bank'
+                    'Axis Bank', 'HDFC Bank', 'ICICI Bank', 'IDFC Bank', 'YES Bank', 'IndusInd Bank', 'Bandhan Bank'
                 ]
             ],
             'doctor-loan' => [
@@ -214,7 +223,7 @@ class FintechDataService
                 ],
                 'eligibility' => [
                     'Qualification: MBBS, MD, MS, BDS, MDS, BHMS, BAMS with valid registration',
-                    'Medical Registration: Registered with Medical Council of India (MCI) or State Medical Council',
+                    'Medical Registration: Registered with Medical Council of India (MCI) or State Council',
                     'Post-Qualification Experience: Minimum 2 to 3 years experience',
                     'Age Limit: 25 to 65 years',
                     'Practice: Self-practice clinic, hospital consultant, or nursing home owner'
@@ -227,7 +236,8 @@ class FintechDataService
                     'Financials: Last 2 years ITR with computation of income (if applicable)'
                 ],
                 'suitable_lenders' => [
-                    'Bajaj Finance', 'Tata Capital', 'Poonawalla Fincorp', 'L & T Finance', 'Aditya Birla', 'Piramal Finance', 'Godrej Finance', 'SMFG India', 'Axis Finance', 'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'IndusInd Bank', 'IDFC Bank', 'Bandhan Bank', 'YES Bank'
+                    'Bajaj Finance', 'Cholamandalam', 'Tata Capital', 'Poonawalla Fincorp', 'L & T Finance', 'Aditya Birla', 'Piramal Finance', 'Godrej Finance', 'SMFG India', 'Axis Finance',
+                    'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'IndusInd Bank', 'IDFC Bank', 'Bandhan Bank', 'YES Bank'
                 ]
             ],
             'ca-loan' => [
@@ -267,7 +277,8 @@ class FintechDataService
                     'Salary Slips & Form 16: For CAs employed in corporate sectors'
                 ],
                 'suitable_lenders' => [
-                    'Bajaj Finance', 'Tata Capital', 'Poonawalla Fincorp', 'L & T Finance', 'Aditya Birla', 'Piramal Finance', 'Godrej Finance', 'SMFG India', 'Axis Finance', 'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'IndusInd Bank', 'IDFC Bank', 'Bandhan Bank', 'YES Bank'
+                    'Bajaj Finance', 'Cholamandalam', 'Tata Capital', 'Poonawalla Fincorp', 'L & T Finance', 'Aditya Birla', 'Piramal Finance', 'Godrej Finance', 'SMFG India', 'Axis Finance',
+                    'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'IndusInd Bank', 'IDFC Bank', 'Bandhan Bank', 'YES Bank'
                 ]
             ]
         ];
@@ -275,17 +286,17 @@ class FintechDataService
 
     public static function getAllLenders(): array
     {
+        // Strictly the 16 NBFCs and 7 Banks from the provided Excel database
         return [
-            // NBFCs
+            // 16 NBFCs
             [
                 'name' => 'Bajaj Finance',
                 'slug' => 'bajaj-finance',
                 'type' => 'NBFC',
-                'logo_text' => 'BAJAJ FINSERV',
                 'accent' => '#005CA9',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan'],
                 'tagline' => 'India\'s largest diversified retail NBFC',
-                'description' => 'Bajaj Finance is renowned for its instant paperless approvals, flexible flexi-loan features, and quick digital disbursements across personal, business, and doctor loans.',
+                'description' => 'Bajaj Finance offers paperless approvals, flexible flexi-loan features, and quick digital disbursements across personal, business, and doctor loans.',
                 'interest_range' => '10.50% - 16.00% p.a.',
                 'max_tenure' => 'Up to 84 months',
                 'special_features' => ['Flexi Hybrid EMI Facility', 'Instant digital sanction', 'Minimal documentation'],
@@ -295,11 +306,10 @@ class FintechDataService
                 'name' => 'Cholamandalam',
                 'slug' => 'cholamandalam',
                 'type' => 'NBFC',
-                'logo_text' => 'CHOLA',
                 'accent' => '#C41230',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan', 'New Car Loan', 'Used Car Loan'],
                 'tagline' => 'Murugappa Group company empowering Indian dreams',
-                'description' => 'Cholamandalam Investment and Finance Company delivers tailored vehicle finance, business capital, and personal funding across urban and semi-urban India.',
+                'description' => 'Cholamandalam Investment and Finance Company delivers tailored vehicle finance, business capital, and personal funding across India.',
                 'interest_range' => '11.00% - 17.50% p.a.',
                 'max_tenure' => 'Up to 60 months',
                 'special_features' => ['High valuation for used cars', 'Extensive branch network', 'Customized MSME solutions'],
@@ -309,10 +319,9 @@ class FintechDataService
                 'name' => 'Tata Capital',
                 'slug' => 'tata-capital',
                 'type' => 'NBFC',
-                'logo_text' => 'TATA CAPITAL',
                 'accent' => '#0A5FA4',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan', 'New Car Loan', 'Used Car Loan'],
-                'tagline' => 'Count on Us – Trusted financial arm of the Tata Group',
+                'tagline' => 'Trusted financial arm of the Tata Group',
                 'description' => 'Tata Capital provides transparent, customer-centric loan solutions with competitive interest rates and seamless end-to-end digital processing.',
                 'interest_range' => '10.49% - 16.50% p.a.',
                 'max_tenure' => 'Up to 72 months',
@@ -323,7 +332,6 @@ class FintechDataService
                 'name' => 'Poonawalla Fincorp',
                 'slug' => 'poonawalla-fincorp',
                 'type' => 'NBFC',
-                'logo_text' => 'POONAWALLA',
                 'accent' => '#E31B23',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan', 'New Car Loan', 'Used Car Loan'],
                 'tagline' => 'Cyrus Poonawalla Group financial services company',
@@ -337,7 +345,6 @@ class FintechDataService
                 'name' => 'Piramal Finance',
                 'slug' => 'piramal-finance',
                 'type' => 'NBFC',
-                'logo_text' => 'PIRAMAL',
                 'accent' => '#E85B25',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan'],
                 'tagline' => 'Financial services bridging Bharat and urban India',
@@ -351,7 +358,6 @@ class FintechDataService
                 'name' => 'Aditya Birla',
                 'slug' => 'aditya-birla',
                 'type' => 'NBFC',
-                'logo_text' => 'ADITYA BIRLA',
                 'accent' => '#C4161C',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan'],
                 'tagline' => 'Aditya Birla Finance – Universal financial solutions',
@@ -365,7 +371,6 @@ class FintechDataService
                 'name' => 'SMFG India',
                 'slug' => 'smfg-india',
                 'type' => 'NBFC',
-                'logo_text' => 'SMFG INDIA',
                 'accent' => '#177638',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan'],
                 'tagline' => 'SMFG India Credit (formerly Fullerton India)',
@@ -379,7 +384,6 @@ class FintechDataService
                 'name' => 'Finnable',
                 'slug' => 'finnable',
                 'type' => 'NBFC',
-                'logo_text' => 'FINNABLE',
                 'accent' => '#2E3192',
                 'products' => ['Salaried Personal Loan'],
                 'tagline' => 'Fast digital loans for salaried professionals',
@@ -393,7 +397,6 @@ class FintechDataService
                 'name' => 'InCred',
                 'slug' => 'incred',
                 'type' => 'NBFC',
-                'logo_text' => 'INCRED',
                 'accent' => '#E82449',
                 'products' => ['Salaried Personal Loan'],
                 'tagline' => 'Borrow with confidence, grow with InCred',
@@ -407,7 +410,6 @@ class FintechDataService
                 'name' => 'L & T Finance',
                 'slug' => 'lt-finance',
                 'type' => 'NBFC',
-                'logo_text' => 'L&T FINANCE',
                 'accent' => '#004B87',
                 'products' => ['Business Loan', 'Doctor & CA Loan'],
                 'tagline' => 'Larsen & Toubro group financial enterprise',
@@ -421,7 +423,6 @@ class FintechDataService
                 'name' => 'Godrej Finance',
                 'slug' => 'godrej-finance',
                 'type' => 'NBFC',
-                'logo_text' => 'GODREJ',
                 'accent' => '#008542',
                 'products' => ['Business Loan', 'Doctor & CA Loan'],
                 'tagline' => 'Empowering Indian businesses and professionals',
@@ -435,7 +436,6 @@ class FintechDataService
                 'name' => 'Axis Finance',
                 'slug' => 'axis-finance',
                 'type' => 'NBFC',
-                'logo_text' => 'AXIS FINANCE',
                 'accent' => '#97144D',
                 'products' => ['Business Loan', 'Doctor & CA Loan'],
                 'tagline' => 'Wholly owned subsidiary of Axis Bank',
@@ -449,7 +449,6 @@ class FintechDataService
                 'name' => 'HDB Finance',
                 'slug' => 'hdb-finance',
                 'type' => 'NBFC',
-                'logo_text' => 'HDB SERVICES',
                 'accent' => '#004C8F',
                 'products' => ['New Car Loan', 'Used Car Loan'],
                 'tagline' => 'HDB Financial Services – An HDFC Bank company',
@@ -463,7 +462,6 @@ class FintechDataService
                 'name' => 'Mahindra Finance',
                 'slug' => 'mahindra-finance',
                 'type' => 'NBFC',
-                'logo_text' => 'MAHINDRA',
                 'accent' => '#E31837',
                 'products' => ['New Car Loan', 'Used Car Loan'],
                 'tagline' => 'Leading rural and semi-urban auto financier',
@@ -477,7 +475,6 @@ class FintechDataService
                 'name' => 'Indostar Capital',
                 'slug' => 'indostar-capital',
                 'type' => 'NBFC',
-                'logo_text' => 'INDOSTAR',
                 'accent' => '#143D69',
                 'products' => ['New Car Loan', 'Used Car Loan'],
                 'tagline' => 'Commercial and retail vehicle finance experts',
@@ -491,7 +488,6 @@ class FintechDataService
                 'name' => 'Muthoot Capital',
                 'slug' => 'muthoot-capital',
                 'type' => 'NBFC',
-                'logo_text' => 'MUTHOOT',
                 'accent' => '#E31B23',
                 'products' => ['New Car Loan', 'Used Car Loan'],
                 'tagline' => 'Muthoot Pappachan Group auto finance',
@@ -502,16 +498,15 @@ class FintechDataService
                 'processing_fee_offer' => 'Promotional fee exemptions available'
             ],
 
-            // Banks
+            // 7 Banks
             [
                 'name' => 'HDFC Bank',
                 'slug' => 'hdfc-bank',
                 'type' => 'Bank',
-                'logo_text' => 'HDFC BANK',
                 'accent' => '#004C8F',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan', 'New Car Loan', 'Used Car Loan'],
                 'tagline' => 'India\'s largest private sector bank',
-                'description' => 'HDFC Bank is the benchmark for Indian retail banking, offering industry-best interest rates, 10-second instant loan sanctions for existing account holders, and extensive lending options across all categories.',
+                'description' => 'HDFC Bank offers industry-leading interest rates, 10-second instant loan sanctions for account holders, and extensive lending options across all categories.',
                 'interest_range' => '10.49% - 15.00% p.a.',
                 'max_tenure' => 'Up to 84 months',
                 'special_features' => ['10-second pre-approved personal loans', 'Industry-lowest auto loan rates', 'Comprehensive digital netbanking ecosystem'],
@@ -521,10 +516,9 @@ class FintechDataService
                 'name' => 'ICICI Bank',
                 'slug' => 'icici-bank',
                 'type' => 'Bank',
-                'logo_text' => 'ICICI BANK',
                 'accent' => '#B02A30',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan', 'New Car Loan', 'Used Car Loan'],
-                'tagline' => 'Hum Hai Na – Trusted financial partner for millions',
+                'tagline' => 'Trusted financial partner for millions',
                 'description' => 'ICICI Bank delivers cutting-edge digital banking with pre-approved personal loans, paperless business credit, and attractive auto loan financing.',
                 'interest_range' => '10.65% - 15.50% p.a.',
                 'max_tenure' => 'Up to 84 months',
@@ -535,10 +529,9 @@ class FintechDataService
                 'name' => 'Axis Bank',
                 'slug' => 'axis-bank',
                 'type' => 'Bank',
-                'logo_text' => 'AXIS BANK',
                 'accent' => '#97144D',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan', 'New Car Loan', 'Used Car Loan'],
-                'tagline' => 'Badhti Ka Naam Zindagi – Third largest private bank',
+                'tagline' => 'Leading private bank in personal and retail finance',
                 'description' => 'Axis Bank offers flexible credit solutions, tailored professional loans for doctors and CAs, and competitive auto loans with low EMIs.',
                 'interest_range' => '10.49% - 15.75% p.a.',
                 'max_tenure' => 'Up to 84 months',
@@ -549,7 +542,6 @@ class FintechDataService
                 'name' => 'IndusInd Bank',
                 'slug' => 'indusind-bank',
                 'type' => 'Bank',
-                'logo_text' => 'INDUSIND BANK',
                 'accent' => '#832527',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan', 'New Car Loan', 'Used Car Loan'],
                 'tagline' => 'Pioneer in automotive and retail financing',
@@ -560,14 +552,13 @@ class FintechDataService
                 'processing_fee_offer' => 'Special zero processing fee schemes for eligible applicants'
             ],
             [
-                'name' => 'IDFC FIRST Bank',
+                'name' => 'IDFC Bank',
                 'slug' => 'idfc-bank',
                 'type' => 'Bank',
-                'logo_text' => 'IDFC FIRST',
                 'accent' => '#9B1C2E',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan', 'New Car Loan', 'Used Car Loan'],
-                'tagline' => 'Always You First – Transparent banking with zero penalties',
-                'description' => 'IDFC FIRST Bank is widely acclaimed for its customer-friendly terms, dynamic interest rates, zero foreclosure charges on select loans, and transparent policies.',
+                'tagline' => 'Transparent banking with customer-first policies',
+                'description' => 'IDFC Bank (IDFC FIRST Bank) is widely acclaimed for its customer-friendly terms, dynamic interest rates, zero foreclosure charges on select loans, and transparent policies.',
                 'interest_range' => '10.49% - 15.00% p.a.',
                 'max_tenure' => 'Up to 84 months',
                 'special_features' => ['Zero foreclosure charges on select products', 'Seamless digital journey', 'Attractive rates for high CIBIL scores'],
@@ -577,10 +568,9 @@ class FintechDataService
                 'name' => 'Bandhan Bank',
                 'slug' => 'bandhan-bank',
                 'type' => 'Bank',
-                'logo_text' => 'BANDHAN BANK',
                 'accent' => '#00529B',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan', 'New Car Loan', 'Used Car Loan'],
-                'tagline' => 'Aapka Bhala, Sabki Bhalai – Comprehensive retail bank',
+                'tagline' => 'Empowering Eastern India and nationwide retail banking',
                 'description' => 'Bandhan Bank provides competitive lending options for salaried individuals, growing businesses, and professionals with personalized customer attention.',
                 'interest_range' => '10.99% - 16.50% p.a.',
                 'max_tenure' => 'Up to 60 months',
@@ -591,10 +581,9 @@ class FintechDataService
                 'name' => 'YES Bank',
                 'slug' => 'yes-bank',
                 'type' => 'Bank',
-                'logo_text' => 'YES BANK',
                 'accent' => '#004A8F',
                 'products' => ['Salaried Personal Loan', 'Business Loan', 'Doctor & CA Loan', 'New Car Loan', 'Used Car Loan'],
-                'tagline' => 'Life Ko Banao Rich – Modern retail and digital banking',
+                'tagline' => 'Modern retail and digital banking solutions',
                 'description' => 'YES Bank offers rapid digital personal loans, competitive car financing, and working capital loans with simple verification and quick disbursal.',
                 'interest_range' => '10.75% - 16.25% p.a.',
                 'max_tenure' => 'Up to 60 months',
@@ -619,28 +608,28 @@ class FintechDataService
     {
         return [
             [
-                'label' => 'Happy Customers Assisted',
+                'label' => 'Customers Assisted',
                 'value' => '25,000+',
                 'icon' => 'users',
-                'desc' => 'Across 120+ Indian cities'
+                'desc' => 'Across West Bengal & India'
             ],
             [
-                'label' => 'Banking & NBFC Partners',
-                'value' => '50+',
+                'label' => 'Lending Institutions',
+                'value' => '23+',
                 'icon' => 'landmark',
-                'desc' => 'Leading institutional lenders'
+                'desc' => 'Verified Banks & NBFCs'
             ],
             [
-                'label' => 'Approval Rate Assistance',
+                'label' => 'Applications Assisted',
                 'value' => '95%',
                 'icon' => 'check-circle-2',
-                'desc' => 'Tailored profile matching'
+                'desc' => 'Pre-qualified matching'
             ],
             [
-                'label' => 'Fast Processing Time',
-                'value' => '24–48 Hrs',
-                'icon' => 'clock',
-                'desc' => 'Swift verification & disbursal'
+                'label' => 'Customer Support',
+                'value' => '24/7 Desk',
+                'icon' => 'headphones',
+                'desc' => 'Dedicated loan assistance'
             ]
         ];
     }
@@ -655,19 +644,19 @@ class FintechDataService
                 'desc' => 'Save thousands on upfront expenses. We curate exclusive zero processing fee and discounted fee promotional offers from leading Banks and NBFCs for eligible borrowers.'
             ],
             [
-                'title' => 'Multiple Lending Options',
+                'title' => 'Multiple Loan Options',
                 'icon' => 'layers',
                 'color' => 'blue',
                 'desc' => 'Compare loan quotes side-by-side from 23+ premier Banks and top NBFCs in India. Discover competitive interest rates without running from bank to bank.'
             ],
             [
-                'title' => 'Dedicated Customer Support',
+                'title' => 'Dedicated Support',
                 'icon' => 'headphones',
                 'color' => 'indigo',
                 'desc' => 'Our experienced loan advisors guide you at every stage — from document verification to lender submission, query resolution, and final disbursement.'
             ],
             [
-                'title' => '100% Transparent Process',
+                'title' => 'Transparent Process',
                 'icon' => 'shield-check',
                 'color' => 'teal',
                 'desc' => 'No hidden charges, zero surprises, and clear terms. We maintain complete transparency regarding interest rates, tenures, and lender evaluation criteria.'
@@ -721,44 +710,64 @@ class FintechDataService
     {
         return [
             [
-                'name' => 'Rahul Sharma',
-                'city' => 'Mumbai, Maharashtra',
+                'name' => 'Subrata Mukherjee',
+                'city' => 'Kolkata, West Bengal',
                 'role' => 'Senior IT Consultant',
                 'avatar' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
                 'loan_type' => 'Salaried Personal Loan',
                 'amount' => '₹8,50,000',
                 'rating' => 5,
-                'quote' => 'Got my personal loan approved within 2 days through ProcessingFreeLoan.com. The process was completely hassle-free, and best of all, I saved ₹15,000 in processing fees thanks to their zero fee offer!'
+                'quote' => 'Got my personal loan approved within 2 days through ProcessingFreeLoan.com. The process was completely hassle-free, and best of all, I saved ₹17,000 in processing fees thanks to their zero fee offer!'
             ],
             [
-                'name' => 'Dr. Priya Sen',
-                'city' => 'Kolkata, West Bengal',
+                'name' => 'Dr. Debolina Banerjee',
+                'city' => 'Siliguri, West Bengal',
                 'role' => 'Consultant Dermatologist',
                 'avatar' => 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
                 'loan_type' => 'Doctor Professional Loan',
                 'amount' => '₹25,00,000',
                 'rating' => 5,
-                'quote' => 'Setting up my new clinic required immediate capital. The team guided me to an exclusive doctor loan with zero collateral and zero processing charges. Excellent customer support and rapid disbursal!'
+                'quote' => 'Setting up my new diagnostic clinic required immediate capital. The team guided me to an exclusive doctor loan with zero collateral and zero processing charges. Excellent customer support and rapid disbursal!'
             ],
             [
-                'name' => 'Amit Verma',
-                'city' => 'Bengaluru, Karnataka',
-                'role' => 'Business Owner & Director',
+                'name' => 'Anupam Roy',
+                'city' => 'Cooch Behar, West Bengal',
+                'role' => 'Retail Business Owner',
                 'avatar' => 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
                 'loan_type' => 'Unsecured Business Loan',
                 'amount' => '₹40,00,000',
                 'rating' => 5,
-                'quote' => 'Best platform to compare business loan offers in India. I got quotes from Tata Capital, Bajaj, and HDFC Bank simultaneously. The transparency, speed, and loan advice saved me both time and money.'
+                'quote' => 'Best platform to compare business loan offers. I got quotes from Tata Capital, Bajaj, and Bandhan Bank simultaneously. The transparency, speed, and local West Bengal support saved me both time and money.'
             ],
             [
-                'name' => 'Vikram Singhania',
-                'city' => 'New Delhi',
+                'name' => 'Soumen Das, FCA',
+                'city' => 'Durgapur, West Bengal',
                 'role' => 'Chartered Accountant',
                 'avatar' => 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
                 'loan_type' => 'CA Professional Loan',
                 'amount' => '₹18,00,000',
                 'rating' => 5,
-                'quote' => 'As a CA, I pay attention to every line of charges. ProcessingFreeLoan.com kept every promise — competitive 10.25% interest rate, no processing charges, and professional handling.'
+                'quote' => 'As a CA, I pay attention to every fine-print deduction. ProcessingFreeLoan.com kept every promise — competitive 10.25% interest rate, zero processing charges, and professional handling.'
+            ],
+            [
+                'name' => 'Rahul Ghosh',
+                'city' => 'Howrah, West Bengal',
+                'role' => 'Corporate Salaried Manager',
+                'avatar' => 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=80',
+                'loan_type' => 'New Car Loan',
+                'amount' => '₹12,00,000',
+                'rating' => 5,
+                'quote' => 'Secured 100% on-road funding for my new sedan with zero processing fees. The online guidance was top-notch and the loan was sanctioned without any dealership markups.'
+            ],
+            [
+                'name' => 'Priyanka Sen',
+                'city' => 'Asansol, West Bengal',
+                'role' => 'Senior School Educator',
+                'avatar' => 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&auto=format&fit=crop&q=80',
+                'loan_type' => 'Salaried Personal Loan',
+                'amount' => '₹5,00,000',
+                'rating' => 5,
+                'quote' => 'Very reliable platform for salaried employees. The team explained the entire EMI repayment structure clearly, and I received the funds directly in my account in 36 hours.'
             ]
         ];
     }
@@ -775,19 +784,19 @@ class FintechDataService
                 'answer' => 'Loan amounts range from ₹50,000 up to ₹50 Lakhs for personal loans, and up to ₹2 Crore or more for collateral-free business loans, subject to your monthly income, turnover, repayment capacity, and credit score.'
             ],
             [
-                'question' => 'How long does loan approval and disbursal take?',
+                'question' => 'How long does loan approval take?',
                 'answer' => 'Pre-approved and digital applications can receive in-principle sanction in as little as 10 to 30 minutes. Once document verification is complete, loan disbursement into your bank account typically occurs within 24 to 48 working hours.'
             ],
             [
-                'question' => 'Which banks and NBFCs do you work with?',
-                'answer' => 'We assist customers with 23+ leading institutions including HDFC Bank, ICICI Bank, Axis Bank, IDFC FIRST Bank, IndusInd Bank, YES Bank, Bandhan Bank, Bajaj Finance, Tata Capital, Cholamandalam, Poonawalla Fincorp, Piramal Finance, Aditya Birla, SMFG India, L&T Finance, and others.'
+                'question' => 'Which banks and NBFCs offer loan options?',
+                'answer' => 'We assist customers with 23+ leading institutions including HDFC Bank, ICICI Bank, Axis Bank, IDFC Bank, IndusInd Bank, YES Bank, Bandhan Bank, Bajaj Finance, Tata Capital, Cholamandalam, Poonawalla Fincorp, Piramal Finance, Aditya Birla, SMFG India, L & T Finance, Godrej Finance, Axis Finance, HDB Finance, Mahindra Finance, Indostar Capital, Muthoot Capital, Finnable, and InCred.'
             ],
             [
-                'question' => 'What documents are required to apply for a loan?',
+                'question' => 'What documents are required?',
                 'answer' => 'Basic documents include: PAN Card, Aadhaar Card, Last 3 months Salary Slips / Form 16 (for salaried) or 2 years ITR with Financials (for self-employed), and Last 6 months bank account statements. Doctors and CAs provide their respective registration and practice certificates.'
             ],
             [
-                'question' => 'Can self-employed individuals and business owners apply?',
+                'question' => 'Can self-employed individuals apply?',
                 'answer' => 'Yes, absolutely! We offer tailored Business Loans, Doctor Loans, CA Loans, and Used/New Car Loans specifically designed for self-employed individuals, proprietorships, partnerships, and private limited firms.'
             ],
             [
@@ -806,10 +815,10 @@ class FintechDataService
         return [
             [
                 'slug' => 'how-to-improve-loan-eligibility',
-                'title' => 'How to Improve Your Loan Eligibility in 2025',
+                'title' => 'How to Improve Your Loan Eligibility in 2026',
                 'category' => 'Loan Tips & Guides',
                 'read_time' => '4 min read',
-                'date' => 'Nov 15, 2025',
+                'date' => 'Jan 15, 2026',
                 'image' => 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&auto=format&fit=crop&q=80',
                 'excerpt' => 'Discover key steps to boost your CIBIL score, maintain an optimal debt-to-income ratio, and secure zero-processing-fee loan approvals.',
                 'content' => 'Applying for a loan in India requires strategic preparation. Lenders scrutinize credit scores, bank statements, and debt obligations before sanctioning credit. Key strategies include maintaining credit card utilization below 30%, clearing overdue debts, avoiding multiple simultaneous loan applications, and keeping bank balances stable over 6 months.'
@@ -819,7 +828,7 @@ class FintechDataService
                 'title' => 'New Car Loan vs Used Car Loan: Which is Better for You?',
                 'category' => 'Auto Financing',
                 'read_time' => '5 min read',
-                'date' => 'Nov 12, 2025',
+                'date' => 'Jan 10, 2026',
                 'image' => 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&auto=format&fit=crop&q=80',
                 'excerpt' => 'A comprehensive comparison of interest rates, insurance costs, depreciation, and EMI structures for new vs pre-owned vehicle purchases.',
                 'content' => 'Choosing between a new car and a pre-owned vehicle involves more than just sticker price. While new car loans offer lower interest rates (starting ~8.65% p.a.) and longer tenures up to 7 years, pre-owned cars offer superior value with lower initial depreciation. We analyze the total cost of ownership across major Indian lenders.'
@@ -829,7 +838,7 @@ class FintechDataService
                 'title' => 'How EMI is Calculated: A Complete Guide for Borrowers',
                 'category' => 'Financial Literacy',
                 'read_time' => '6 min read',
-                'date' => 'Nov 08, 2025',
+                'date' => 'Jan 05, 2026',
                 'image' => 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80',
                 'excerpt' => 'Understand the mathematics behind reducing-balance EMI calculations, amortization schedules, and prepayments that save you lakhs in interest.',
                 'content' => 'Equated Monthly Installment (EMI) consists of both principal repayment and interest payout. Using the reducing balance formula [P x R x (1+R)^N] / [(1+R)^N - 1], borrowers pay higher interest in early installments. Making part-prepayments during the initial third of your loan tenure drastically slashes total interest.'

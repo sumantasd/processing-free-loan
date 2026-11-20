@@ -68,15 +68,21 @@
     @include('frontend.sections.section-02-navbar')
 
     <!-- Main Page Content -->
-    <main id="main-content">
+    <main id="main-content" class="pb-16 lg:pb-0">
         @yield('content')
     </main>
 
     <!-- Section 17: Premium Deep Navy Footer -->
     @include('frontend.sections.section-17-footer')
 
-    <!-- Global Lead Enquiry Modal -->
+    <!-- Mobile Bottom Sticky Action Bar (Matches Mobile Screenshot) -->
+    @include('frontend.components.mobile-sticky-bar')
+
+    <!-- Global Lead Enquiry Modal (Triggered on click) -->
     @include('frontend.components.modal-enquiry')
+
+    <!-- 2-Second Automatic Entry Lead Popup -->
+    @include('frontend.components.popup-auto-enquiry')
 
     @stack('scripts')
 </body>

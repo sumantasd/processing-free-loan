@@ -1,4 +1,4 @@
-<!-- SECTION 16: FINAL CALL TO ACTION -->
+<!-- SECTION 14 / 16: FINAL CALL TO ACTION -->
 <section class="py-16 sm:py-24 bg-gradient-to-r from-[#031B3B] via-[#062B59] to-[#0866E8] text-white relative overflow-hidden">
     
     <!-- Background Glows -->
@@ -17,14 +17,11 @@
 
         <!-- Heading -->
         <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-            Ready to Get Your Loan <br class="hidden sm:inline">
-            <span class="text-[#12C878] drop-shadow-[0_2px_15px_rgba(18,200,120,0.4)]">
-                Without Processing Fee?
-            </span>
+            Ready to Explore Your Loan Options?
         </h2>
 
         <p class="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of satisfied borrowers across India. Compare instant offers from 23+ premier Banks & NBFCs and get approved with minimal documentation.
+            Start your loan enquiry and explore suitable financial options from 23+ premier Banks & NBFCs without processing fees.
         </p>
 
         <!-- Feature Pills -->
@@ -36,11 +33,11 @@
                 <span class="text-[#1677FF]">✓</span> 23+ Banks & NBFCs
             </span>
             <span class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10">
-                <span class="text-[#12C878]">✓</span> Dedicated Loan Advisor
+                <span class="text-[#12C878]">✓</span> Expert Advisor Support
             </span>
         </div>
 
-        <!-- Big Apply Now Button -->
+        <!-- Action Button -->
         <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button type="button" 
                     @click="openEnquiry()"
@@ -51,9 +48,9 @@
                 </svg>
             </button>
             
-            <a href="tel:{{ str_replace(' ', '', $brand['phone'] ?? '+919876543210') }}" 
+            <a href="{{ $brand['phone_url'] ?? 'tel:+917074906556' }}" 
                class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all flex items-center justify-center gap-2">
-                <span>Call Advisor: {{ $brand['phone'] ?? '+91 98765 43210' }}</span>
+                <span>Call Advisor: {{ $brand['phone'] ?? '+91 7074906556' }}</span>
             </a>
         </div>
 

@@ -1,21 +1,21 @@
 <!-- SECTION 01: TOP INFORMATION BAR -->
-<div class="bg-[#031B3B] text-slate-300 text-xs py-2.5 border-b border-slate-800/80 hidden sm:block">
+<div class="bg-[#031B3B] text-slate-300 text-xs py-2 border-b border-slate-800/80 hidden sm:block">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row items-center justify-between gap-3">
             
             <!-- Left Contact Info -->
             <div class="flex items-center space-x-6">
-                <a href="tel:{{ str_replace(' ', '', $brand['phone'] ?? '+919876543210') }}" class="flex items-center gap-1.5 hover:text-white transition-colors">
+                <a href="{{ $brand['phone_url'] ?? 'tel:+917074906556' }}" class="flex items-center gap-1.5 hover:text-white transition-colors">
                     <svg class="w-3.5 h-3.5 text-[#12C878]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                     </svg>
-                    <span>{{ $brand['phone'] ?? '+91 98765 43210' }}</span>
+                    <span>Customer Helpline: <strong class="text-white">{{ $brand['phone'] ?? '+91 7074906556' }}</strong></span>
                 </a>
-                <a href="mailto:{{ $brand['email'] ?? 'info@processingfreeloan.com' }}" class="flex items-center gap-1.5 hover:text-white transition-colors">
+                <a href="{{ $brand['email_url'] ?? 'mailto:support@processingfreeloan.com' }}" class="flex items-center gap-1.5 hover:text-white transition-colors">
                     <svg class="w-3.5 h-3.5 text-[#12C878]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
-                    <span>{{ $brand['email'] ?? 'info@processingfreeloan.com' }}</span>
+                    <span>{{ $brand['email'] ?? 'support@processingfreeloan.com' }}</span>
                 </a>
             </div>
 

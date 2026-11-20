@@ -59,7 +59,7 @@
                         <img src="{{ asset('images/advisor-laptop.jpg') }}" alt="Fintech team collaborating" class="w-full h-[420px] object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#031B3B]/80 via-transparent to-transparent"></div>
                         <div class="absolute bottom-6 left-6 right-6 text-white text-xs font-semibold">
-                            Headquartered in Salt Lake Sector V, Kolkata with nationwide digital loan assistance.
+                            Registered Office: Khata No. 3429, Premer Danga, Near PDB High School, Khattimari, Cooch Behar, West Bengal – 736171, India.
                         </div>
                     </div>
                 </div>

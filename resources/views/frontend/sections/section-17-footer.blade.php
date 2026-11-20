@@ -1,25 +1,28 @@
-<!-- SECTION 17: PREMIUM FOOTER -->
+<!-- SECTION 15 / 17: COMPLETE PREMIUM FOOTER -->
 <footer class="bg-[#031B3B] text-slate-300 pt-16 pb-12 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- 5 Columns Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-slate-800/80">
             
             <!-- Column 1: Brand & Logo (Col 4) -->
-            <div class="lg:col-span-4 space-y-5">
+            <div class="lg:col-span-4 space-y-4">
                 <a href="{{ route('home') }}" class="inline-block">
-                    <!-- Crisp White Vector Logo for Dark Footer -->
                     <img src="{{ asset('images/logo-white.svg') }}" 
                          alt="Processing Free Loan" 
-                         class="h-12 w-auto object-contain">
+                         class="h-11 sm:h-12 w-auto object-contain">
                 </a>
 
                 <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
-                    ProcessingFreeLoan.com is India's premier loan aggregator platform dedicated to helping salaried professionals, businesses, doctors, and chartered accountants discover the most suitable loan options from 23+ leading Banks and NBFCs — with exclusive zero processing fee offers.
+                    ProcessingFreeLoan.com is a specialized digital loan aggregator in India helping salaried employees, businesses, doctors, and chartered accountants secure the right credit from 23+ leading Banks & NBFCs — with exclusive zero processing fee promotional offers.
                 </p>
 
+                <div class="text-xs text-slate-400 font-semibold">
+                    A Unit Of <strong class="text-white">{{ $brand['company_identity'] ?? 'Unit Of Findeal Financial Private Limited' }}</strong>
+                </div>
+
                 <!-- Social Channels -->
-                <div class="flex items-center space-x-3 pt-2">
+                <div class="flex items-center space-x-3 pt-1">
                     <a href="{{ $brand['social']['facebook'] ?? '#' }}" target="_blank" rel="noopener" aria-label="Facebook" class="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-[#1677FF] text-slate-300 hover:text-white flex items-center justify-center transition-all">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
                     </a>
@@ -56,39 +59,52 @@
                     Quick Links
                 </h4>
                 <ul class="space-y-2.5 text-xs sm:text-sm font-medium">
+                    <li><a href="{{ route('home') }}" class="hover:text-[#12C878] transition-colors">Home</a></li>
                     <li><a href="{{ route('pages.about') }}" class="hover:text-[#12C878] transition-colors">About Us</a></li>
-                    <li><a href="{{ route('partners.index') }}" class="hover:text-[#12C878] transition-colors">Banks & NBFCs</a></li>
-                    <li><a href="{{ route('home') }}#emi-calculator" class="hover:text-[#12C878] transition-colors">EMI Calculator</a></li>
-                    <li><a href="{{ route('home') }}#how-it-works" class="hover:text-[#12C878] transition-colors">How It Works</a></li>
-                    <li><a href="{{ route('home') }}#faqs" class="hover:text-[#12C878] transition-colors">FAQs</a></li>
-                    <li><a href="{{ route('blog.index') }}" class="hover:text-[#12C878] transition-colors">Loan Guides & Tips</a></li>
-                    <li><a href="{{ route('pages.contact') }}" class="hover:text-[#12C878] transition-colors">Contact Support</a></li>
+                    <li><a href="{{ route('partners.index') }}" class="hover:text-[#12C878] transition-colors">Our Partners</a></li>
+                    <li><a href="{{ route('pages.contact') }}" class="hover:text-[#12C878] transition-colors">Contact Us</a></li>
+                    <li><a href="{{ route('home') }}#faqs" class="hover:text-[#12C878] transition-colors">FAQ</a></li>
+                    <li><a href="{{ route('blog.index') }}" class="hover:text-[#12C878] transition-colors">Blog</a></li>
                 </ul>
             </div>
 
-            <!-- Column 4: Contact Information (Col 2) -->
+            <!-- Column 4: Official Contact Information (Col 2) -->
             <div class="lg:col-span-2 space-y-4">
                 <h4 class="text-sm font-extrabold text-white uppercase tracking-wider">
-                    Contact Us
+                    Contact Information
                 </h4>
-                <ul class="space-y-3 text-xs sm:text-sm text-slate-400">
-                    <li class="flex items-start gap-2.5">
-                        <svg class="w-4 h-4 text-[#12C878] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                        <span>{{ $brand['address'] ?? 'Kolkata, West Bengal, India' }}</span>
-                    </li>
-                    <li class="flex items-center gap-2.5">
-                        <svg class="w-4 h-4 text-[#12C878] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        <a href="tel:{{ str_replace(' ', '', $brand['phone'] ?? '+919876543210') }}" class="hover:text-white transition-colors">
-                            {{ $brand['phone'] ?? '+91 98765 43210' }}
+                <div class="space-y-3 text-xs sm:text-sm text-slate-400">
+                    
+                    <div>
+                        <strong class="text-slate-200 block text-[11px] uppercase tracking-wider mb-0.5">REGISTERED OFFICE:</strong>
+                        <p class="leading-relaxed text-slate-400 text-xs">
+                            {{ $brand['registered_office'] ?? 'Khata No. 3429, Premer Danga, Near PDB High School, Khattimari, Cooch Behar, West Bengal – 736171, India.' }}
+                        </p>
+                        <a href="{{ $brand['google_maps_url'] ?? 'https://maps.google.com/?q=Premer+Danga+Khattimari+Cooch+Behar+West+Bengal+736171' }}" 
+                           target="_blank" 
+                           rel="noopener"
+                           class="inline-flex items-center gap-1.5 text-xs font-bold text-[#12C878] hover:underline mt-1.5">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <span>Get Directions</span>
                         </a>
-                    </li>
-                    <li class="flex items-center gap-2.5">
-                        <svg class="w-4 h-4 text-[#12C878] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                        <a href="mailto:{{ $brand['email'] ?? 'info@processingfreeloan.com' }}" class="hover:text-white transition-colors truncate">
-                            {{ $brand['email'] ?? 'info@processingfreeloan.com' }}
+                    </div>
+
+                    <div class="pt-1">
+                        <strong class="text-slate-200 block text-[11px] uppercase tracking-wider mb-0.5">Helpline:</strong>
+                        <a href="{{ $brand['phone_url'] ?? 'tel:+917074906556' }}" class="text-white hover:text-[#12C878] transition-colors font-bold text-xs flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5 text-[#12C878]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <span>{{ $brand['phone'] ?? '+91 7074906556' }}</span>
                         </a>
-                    </li>
-                </ul>
+                    </div>
+
+                    <div>
+                        <strong class="text-slate-200 block text-[11px] uppercase tracking-wider mb-0.5">Email Us:</strong>
+                        <a href="{{ $brand['email_url'] ?? 'mailto:support@processingfreeloan.com' }}" class="text-slate-300 hover:text-white transition-colors text-xs truncate block">
+                            {{ $brand['email'] ?? 'support@processingfreeloan.com' }}
+                        </a>
+                    </div>
+
+                </div>
             </div>
 
             <!-- Column 5: Newsletter Form (Col 2) -->
@@ -98,7 +114,7 @@
                     Get Loan Updates
                 </h4>
                 <p class="text-xs text-slate-400">
-                    Subscribe to receive latest bank rate cuts, festival loan offers and zero-fee alerts.
+                    Subscribe to receive latest bank rate cuts, festival offers and zero-fee alerts.
                 </p>
 
                 <template x-if="!subscribed">
@@ -126,27 +142,38 @@
         </div>
 
         <!-- Financial Services Mandatory Legal Disclaimer -->
-        <div class="py-8 text-[11px] text-slate-400 leading-relaxed border-b border-slate-800/80 space-y-2">
+        <div class="py-6 text-[11px] text-slate-400 leading-relaxed border-b border-slate-800/80 space-y-2">
             <p>
-                <strong class="text-slate-300">Financial Services Disclaimer:</strong> ProcessingFreeLoan.com is an independent financial technology marketplace and digital loan facilitator operating in India. We connect consumers with RBI-registered Banks, Non-Banking Financial Companies (NBFCs), and authorized lending institutions. We do not directly lend money or disburse loans. All credit underwriting decisions, sanction limits, interest rates, tenure durations, processing fee waivers, and charges are governed entirely by the lending policies and discretionary risk evaluation of the respective Bank or NBFC.
-            </p>
-            <p>
-                *Zero Processing Fee offers are promotional schemes extended by select partner institutions for eligible borrower profiles during specific campaign windows. Terms and conditions apply. ProcessingFreeLoan.com does not collect any upfront consultation or application fees from customers.
+                <strong class="text-slate-300">Financial Services Disclaimer:</strong> ProcessingFreeLoan.com is a unit of Findeal Financial Private Limited, operating as an independent financial technology aggregator and digital loan facilitator in India. We connect consumers with RBI-registered Banks and Non-Banking Financial Companies (NBFCs). We do not directly lend money or disburse loans. All credit underwriting decisions, sanction limits, interest rates, tenure durations, and processing fee waivers are governed entirely by the lending policies and discretionary risk appraisal of the respective Bank or NBFC.
             </p>
         </div>
 
-        <!-- Bottom Copyright & Legal Links -->
-        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-            <div>
-                © {{ date('Y') }} ProcessingFreeLoan.com. All rights reserved.
+        <!-- Bottom Copyright & Developer Credit (Strict Horizontal Row on Desktop) -->
+        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            
+            <!-- LEFT: Copyright & Company Identity -->
+            <div class="text-center sm:text-left">
+                <span>© 2026 ProcessingFreeLoan.com. All rights reserved.</span>
+                <span class="block sm:inline sm:ml-1 text-slate-500 font-medium">Unit Of Findeal Financial Private Limited</span>
             </div>
-            <div class="flex items-center space-x-5 font-medium">
+
+            <!-- CENTER: Legal Links -->
+            <div class="flex items-center space-x-4 font-medium">
                 <a href="{{ route('legal.privacy') }}" class="hover:text-white transition-colors">Privacy Policy</a>
                 <span>•</span>
                 <a href="{{ route('legal.terms') }}" class="hover:text-white transition-colors">Terms & Conditions</a>
                 <span>•</span>
                 <a href="{{ route('legal.disclaimer') }}" class="hover:text-white transition-colors">Disclaimer</a>
             </div>
+
+            <!-- RIGHT: Developed By Tech Googly Credit -->
+            <div class="text-center sm:text-right font-medium">
+                <span>Developed By </span>
+                <a href="https://techgoogly.com/" target="_blank" rel="noopener" class="text-white font-bold hover:text-[#12C878] transition-colors underline decoration-slate-600 hover:decoration-[#12C878]">
+                    Tech Googly
+                </a>
+            </div>
+
         </div>
 
     </div>
