@@ -115,8 +115,8 @@
                  :style="'transform: translateX(-' + (currentSlide * (100 / cardsPerSlide)) + '%)'">
                 
                 @foreach($lenders as $lender)
-                <div class="flex-shrink-0 flex flex-col justify-between text-center p-4 rounded-2xl bg-[#F8FAFC] hover:bg-white border border-slate-200/90 hover:border-blue-300 hover:shadow-lg transition-all duration-200 cursor-pointer group"
-                     style="width: calc((100% - (var(--gap, 16px) * 6)) / 7); min-width: 140px;"
+                <div class="flex-shrink-0 flex flex-col justify-between text-center p-3.5 sm:p-4 rounded-2xl bg-[#F8FAFC] hover:bg-white border border-slate-200/90 hover:border-blue-300 hover:shadow-lg transition-all duration-200 cursor-pointer group"
+                     style="min-width: 0;"
                      :style="'width: calc(100% / ' + cardsPerSlide + ' - 12px)'"
                      @click="window.location.href='{{ route('partners.show', $lender['slug']) }}'">
                     

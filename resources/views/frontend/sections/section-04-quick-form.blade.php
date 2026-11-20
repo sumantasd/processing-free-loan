@@ -1,6 +1,6 @@
-<!-- SECTION 04: LOAN ELIGIBILITY QUICK FORM -->
-<div class="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 sm:-mt-16 mb-16">
-    <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-10 border border-slate-100"
+<!-- SECTION 04: LOAN ELIGIBILITY QUICK FORM (DESKTOP FLOATING FORM) -->
+<div class="hidden lg:block relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 mb-16">
+    <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-10 border border-slate-100"
          x-data="{
              quickLoanType: 'personal-loan',
              quickAmount: '500000',

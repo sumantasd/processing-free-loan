@@ -68,7 +68,7 @@
     @include('frontend.sections.section-02-navbar')
 
     <!-- Main Page Content -->
-    <main id="main-content" class="pb-16 lg:pb-0">
+    <main id="main-content" class="pb-24 lg:pb-0">
         @yield('content')
     </main>
 

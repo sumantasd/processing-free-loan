@@ -13,7 +13,6 @@ class FintechDataService
             'website_url' => 'https://processingfreeloan.com/',
             'company_identity' => 'Unit Of Findeal Financial Private Limited',
             'registered_office' => 'Khata No. 3429, Premer Danga, Near PDB High School, Khattimari, Cooch Behar, West Bengal – 736171, India.',
-            'address' => 'Khata No. 3429, Premer Danga, Near PDB High School, Khattimari, Cooch Behar, West Bengal – 736171, India.',
             'google_maps_url' => 'https://maps.google.com/?q=Premer+Danga+Khattimari+Cooch+Behar+West+Bengal+736171',
             'phone' => '+91 7074906556',
             'phone_url' => 'tel:+917074906556',
