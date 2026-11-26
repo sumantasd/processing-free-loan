@@ -11,11 +11,23 @@ class FintechDataService
             'tagline' => 'LOAN WITHOUT PROCESSING FEE',
             'domain' => 'ProcessingFreeLoan.com',
             'website_url' => 'https://processingfreeloan.com/',
-            'company_identity' => 'Unit Of Findeal Financial Private Limited',
-            'registered_office' => 'Khata No. 3429, Premer Danga, Near PDB High School, Khattimari, Cooch Behar, West Bengal – 736171, India.',
-            'google_maps_url' => 'https://maps.google.com/?q=Premer+Danga+Khattimari+Cooch+Behar+West+Bengal+736171',
-            'phone' => '+91 7074906556',
-            'phone_url' => 'tel:+917074906556',
+            'company_relationship' => 'A Venture of',
+            'company_name' => 'Findeal Financial Services Private Limited',
+            'company_identity' => 'A Venture of Findeal Financial Services Private Limited',
+            'combined_branding' => 'A Venture of Findeal Financial Services Private Limited',
+            'office_label' => 'Corporate Office',
+            'corporate_office' => '1st Floor, Spencer Plaza, Burdwan Road, Siliguri – 734001, West Bengal, India.',
+            'registered_office' => '1st Floor, Spencer Plaza, Burdwan Road, Siliguri – 734001, West Bengal, India.',
+            'office_address' => '1st Floor, Spencer Plaza, Burdwan Road, Siliguri – 734001, West Bengal, India.',
+            'address' => '1st Floor, Spencer Plaza, Burdwan Road, Siliguri – 734001, West Bengal, India.',
+            'google_maps_url' => 'https://www.google.com/maps/search/?api=1&query=1st+Floor%2C+Spencer+Plaza%2C+Burdwan+Road%2C+Siliguri+734001%2C+West+Bengal%2C+India',
+            'phone' => '+91 98002 10503',
+            'phone_url' => 'tel:+919800210503',
+            'phone_primary' => '+91 98002 10503',
+            'phone_primary_url' => 'tel:+919800210503',
+            'phone_secondary' => '+91 76790 96826',
+            'phone_secondary_url' => 'tel:+917679096826',
+            'phone_display' => '+91 98002 10503 / +91 76790 96826',
             'email' => 'support@processingfreeloan.com',
             'email_url' => 'mailto:support@processingfreeloan.com',
             'support_hours' => 'Mon - Sat: 9:30 AM - 7:00 PM',
@@ -27,7 +39,7 @@ class FintechDataService
                 'youtube' => 'https://youtube.com/@processingfreeloan',
                 'linkedin' => 'https://linkedin.com/company/processingfreeloan',
             ],
-            'disclaimer' => 'ProcessingFreeLoan.com (Unit Of Findeal Financial Private Limited) is a financial loan aggregator and comparison platform assisting Indian borrowers with loan discovery from RBI-regulated Banks and NBFCs. We are not a direct lender. Processing fee waiver offers are subject to individual lender policies, credit evaluation, and specific promo schemes. Final interest rates and terms are solely determined by the lending institution.'
+            'disclaimer' => 'Financial Services Disclaimer: ProcessingFreeLoan.com is A Venture of Findeal Financial Services Private Limited, operating as an independent financial technology aggregator and digital loan facilitator in India. We connect consumers with RBI-registered Banks and Non-Banking Financial Companies (NBFCs). We do not directly lend money or disburse loans. All credit underwriting decisions, sanction limits, interest rates, tenure durations, and processing fee waivers are governed entirely by the lending policies and discretionary risk appraisal of the respective Bank or NBFC.'
         ];
 
         try {
@@ -36,17 +48,61 @@ class FintechDataService
                 if (!empty($dbSettings)) {
                     if (!empty($dbSettings['brand_name'])) $config['name'] = $dbSettings['brand_name'];
                     if (!empty($dbSettings['brand_tagline'])) $config['tagline'] = $dbSettings['brand_tagline'];
-                    if (!empty($dbSettings['company_identity'])) $config['company_identity'] = $dbSettings['company_identity'];
+                    if (!empty($dbSettings['company_identity'])) {
+                        $val = $dbSettings['company_identity'];
+                        $val = str_ireplace(
+                            ['A Unit Of Unit Of Findeal Financial Private Limited', 'A Unit Of Findeal Financial Private Limited', 'Unit Of Findeal Financial Private Limited', 'Findeal Financial Private Limited'],
+                            'A Venture of Findeal Financial Services Private Limited',
+                            $val
+                        );
+                        $config['company_identity'] = $val;
+                        $config['combined_branding'] = $val;
+                    }
                     if (!empty($dbSettings['header_phone'])) {
                         $config['phone'] = $dbSettings['header_phone'];
                         $config['phone_url'] = 'tel:' . preg_replace('/[^\+0-9]/', '', $dbSettings['header_phone']);
+                        $config['phone_primary'] = $dbSettings['header_phone'];
+                        $config['phone_primary_url'] = 'tel:' . preg_replace('/[^\+0-9]/', '', $dbSettings['header_phone']);
+                    }
+                    if (!empty($dbSettings['header_phone_secondary'])) {
+                        $config['phone_secondary'] = $dbSettings['header_phone_secondary'];
+                        $config['phone_secondary_url'] = 'tel:' . preg_replace('/[^\+0-9]/', '', $dbSettings['header_phone_secondary']);
+                    }
+                    if (!empty($config['phone_primary']) && !empty($config['phone_secondary'])) {
+                        $config['phone_display'] = $config['phone_primary'] . ' / ' . $config['phone_secondary'];
                     }
                     if (!empty($dbSettings['header_email'])) {
                         $config['email'] = $dbSettings['header_email'];
                         $config['email_url'] = 'mailto:' . $dbSettings['header_email'];
                     }
-                    if (!empty($dbSettings['footer_address'])) $config['registered_office'] = $dbSettings['footer_address'];
-                    if (!empty($dbSettings['footer_disclaimer'])) $config['disclaimer'] = $dbSettings['footer_disclaimer'];
+                    if (!empty($dbSettings['footer_address'])) {
+                        $config['corporate_office'] = $dbSettings['footer_address'];
+                        $config['registered_office'] = $dbSettings['footer_address'];
+                        $config['office_address'] = $dbSettings['footer_address'];
+                        $config['address'] = $dbSettings['footer_address'];
+                    }
+                    if (!empty($dbSettings['corporate_office'])) {
+                        $config['corporate_office'] = $dbSettings['corporate_office'];
+                        $config['registered_office'] = $dbSettings['corporate_office'];
+                        $config['office_address'] = $dbSettings['corporate_office'];
+                        $config['address'] = $dbSettings['corporate_office'];
+                    }
+                    if (!empty($dbSettings['registered_office']) && strpos($dbSettings['registered_office'], 'Premer Danga') === false) {
+                        $config['corporate_office'] = $dbSettings['registered_office'];
+                        $config['registered_office'] = $dbSettings['registered_office'];
+                        $config['office_address'] = $dbSettings['registered_office'];
+                        $config['address'] = $dbSettings['registered_office'];
+                    }
+                    if (!empty($dbSettings['office_label'])) {
+                        $config['office_label'] = $dbSettings['office_label'];
+                    }
+                    if (!empty($dbSettings['footer_disclaimer'])) {
+                        $config['disclaimer'] = str_ireplace(
+                            ['Unit Of Findeal Financial Private Limited', 'Findeal Financial Private Limited', 'A Unit Of Unit Of Findeal Financial Private Limited', 'A Unit Of Findeal Financial Private Limited'],
+                            'A Venture of Findeal Financial Services Private Limited',
+                            $dbSettings['footer_disclaimer']
+                        );
+                    }
                     if (!empty($dbSettings['google_maps_url'])) $config['google_maps_url'] = $dbSettings['google_maps_url'];
                     if (!empty($dbSettings['developer_name'])) $config['developer_name'] = $dbSettings['developer_name'];
                     if (!empty($dbSettings['developer_url'])) $config['developer_url'] = $dbSettings['developer_url'];
@@ -62,7 +118,7 @@ class FintechDataService
         $products = [
             'personal-loan' => [
                 'slug' => 'personal-loan',
-                'title' => 'Personal Loan',
+                'title' => 'Salaried Personal Loan',
                 'tagline' => 'For your personal financial needs easily',
                 'badge' => 'Instant Approval',
                 'icon' => 'user-check',
@@ -72,26 +128,25 @@ class FintechDataService
                 'min_amount' => 50000,
                 'max_amount' => 5000000,
                 'interest_rate' => 'Starting @ 10.49% p.a.',
-                'tenure' => '12 to 72 Months',
+                'tenure' => '12 to 108 Months',
                 'processing_fee' => 'Zero Processing Fee Offers Available*',
                 'description' => 'Cover medical expenses, family milestones, travel, or home upgrades with collateral-free personal loans from leading Banks and NBFCs at competitive interest rates.',
                 'key_benefits' => [
                     'Zero processing fee promotional schemes on eligible profiles',
                     '100% paperless digital verification process',
-                    'Flexible repayment tenure up to 6 years',
+                    'Flexible repayment tenure up to 9 years',
                     'Direct bank disbursement within 24 to 48 hours',
                     'No collateral or physical guarantor required'
                 ],
                 'eligibility' => [
                     'Nationality: Resident Indian Citizen',
-                    'Age: 21 to 58 years at loan maturity',
-                    'Monthly Net Salary: Min ₹20,000/month',
-                    'Employment: Minimum 1 year continuous work experience',
-                    'CIBIL Score: 680+ for fastest zero-fee approval'
+                    'Age: 21 to 65 years at loan maturity',
+                    'Monthly Net Salary: Min ₹15,000/month',
+                    'Salary Credit: Salary must be credited directly to a bank account'
                 ],
                 'documents' => [
                     'Identity Proof: PAN Card (Mandatory), Aadhaar Card',
-                    'Address Proof: Aadhaar Card, Recent Utility Bill, or Rent Agreement',
+                    'Address Proof: Aadhaar Card, Recent Utility Bill, etc.',
                     'Income Proof: Latest 3 months salary slips, Form 16 / ITR',
                     'Banking: Last 6 months bank statement showing regular salary credits',
                     'Photographs: 1 Passport size photograph or digital selfie'
@@ -126,16 +181,12 @@ class FintechDataService
                 'eligibility' => [
                     'Business Entity: Sole Proprietorship, Partnership, LLP, Pvt Ltd',
                     'Business Vintage: Minimum 2 to 3 years in continuous operation',
-                    'Annual Turnover: Minimum ₹20 Lakhs audited turnover',
-                    'Applicant Age: 24 to 65 years',
-                    'Credit Health: Business vintage & promoter CIBIL score 700+'
+                    'Applicant Age: 21 to 65 years'
                 ],
                 'documents' => [
-                    'Entity Proof: GST Registration, Trade License, MSME/Udyam Certificate',
-                    'Financials: Audited Balance Sheet & P&L statements for last 2 years with CA seal',
-                    'Tax Documents: Last 12 months GST returns (GSTR-3B) and 2 years ITR',
+                    'Entity Proof: Trade License, MSME/Udyam Certificate (If Available), GST Registration (If Available)',
                     'Bank Statements: Last 12 months primary operative current account statements',
-                    'KYC: PAN Card & Aadhaar of all promoters/directors'
+                    'KYC: PAN Card & Aadhaar of all authorized persons'
                 ],
                 'suitable_lenders' => [
                     'Bajaj Finance', 'Cholamandalam', 'Tata Capital', 'Poonawalla Fincorp', 'L & T Finance', 'Aditya Birla', 'Piramal Finance', 'Godrej Finance', 'SMFG India', 'Axis Finance',
@@ -167,9 +218,7 @@ class FintechDataService
                 'eligibility' => [
                     'Applicant: Salaried employees, self-employed professionals, businessmen',
                     'Age Limit: 21 to 65 years at loan closure',
-                    'Minimum Income: ₹25,000/month (salaried) or ₹3.5 Lakhs annual ITR (business)',
-                    'Employment / Business Stability: Minimum 1 year in current profession',
-                    'Credit Score: 700+ preferred for best interest rate bands'
+                    'Employment / Business Stability: Minimum 1 year in current profession'
                 ],
                 'documents' => [
                     'Proforma Invoice: Quotation of the chosen car from authorized dealership',
@@ -208,16 +257,13 @@ class FintechDataService
                 'eligibility' => [
                     'Applicant Profile: Salaried, Self-Employed, or Commercial Operators',
                     'Age: 21 to 65 years',
-                    'Car Age: Not older than 10 years at end of loan repayment',
-                    'Income Requirement: Min ₹20,000/month or ₹3 Lakhs annual income',
-                    'Valid Driving License: Preferred for primary borrower'
+                    'Car Age: Not older than 15 years at end of loan repayment'
                 ],
                 'documents' => [
-                    'Vehicle Documents: RC Copy, Insurance Certificate, Pollution (PUC), Valuation Report',
+                    'Vehicle Documents: RC Copy, Insurance Certificate, Pollution (PUC)',
                     'Identity & Address Proof: PAN Card, Aadhaar Card / Passport',
                     'Income Documents: 3 months salary slips or 2 years ITR',
-                    'Bank Statement: Last 6 months active bank account statements',
-                    'Signed loan agreement and RTO transfer forms (Form 29 & 30)'
+                    'Bank Statement: Last 6 months active bank account statements'
                 ],
                 'suitable_lenders' => [
                     'Cholamandalam', 'HDB Finance', 'Mahindra Finance', 'Poonawalla Fincorp', 'Tata Capital', 'Indostar Capital', 'Muthoot Capital',
@@ -251,7 +297,7 @@ class FintechDataService
                     'Medical Registration: Registered with Medical Council of India (MCI) or State Council',
                     'Post-Qualification Experience: Minimum 2 to 3 years experience',
                     'Age Limit: 25 to 65 years',
-                    'Practice: Self-practice clinic, hospital consultant, or nursing home owner'
+                    'Practice: Self-practice clinic, hospital consultant, or Salaried Doctor'
                 ],
                 'documents' => [
                     'Medical Qualification Certificates: MBBS/MD/BDS degree certificate',
@@ -291,8 +337,7 @@ class FintechDataService
                     'Qualification: Fellow Chartered Accountant (FCA) or Associate Chartered Accountant (ACA)',
                     'ICAI Membership: Valid and active Certificate of Practice (COP) or ICAI membership card',
                     'Practice / Salaried Vintage: Minimum 2 years continuous professional practice or corporate employment',
-                    'Applicant Age: 23 to 65 years',
-                    'Good CIBIL track record (700+)'
+                    'Applicant Age: 23 to 65 years'
                 ],
                 'documents' => [
                     'ICAI Proof: ICAI Membership Certificate and current Certificate of Practice (COP)',
@@ -327,6 +372,9 @@ class FintechDataService
                             if ($p->tenure) $products[$p->slug]['tenure'] = $p->tenure;
                             if ($p->processing_fee) $products[$p->slug]['processing_fee'] = $p->processing_fee;
                             if ($p->description) $products[$p->slug]['description'] = $p->description;
+                            if (!empty($p->key_benefits)) $products[$p->slug]['key_benefits'] = is_array($p->key_benefits) ? $p->key_benefits : (json_decode($p->key_benefits, true) ?: $products[$p->slug]['key_benefits']);
+                            if (!empty($p->eligibility)) $products[$p->slug]['eligibility'] = is_array($p->eligibility) ? $p->eligibility : (json_decode($p->eligibility, true) ?: $products[$p->slug]['eligibility']);
+                            if (!empty($p->documents)) $products[$p->slug]['documents'] = is_array($p->documents) ? $p->documents : (json_decode($p->documents, true) ?: $products[$p->slug]['documents']);
                         }
                     }
                 }
@@ -863,7 +911,7 @@ class FintechDataService
                             'role' => $t->role ?: '',
                             'avatar' => $t->avatar_url,
                             'initials' => $t->initials,
-                            'loan_type' => $t->loan_category ?: 'Personal Loan',
+                            'loan_type' => $t->loan_category ?: 'Salaried Personal Loan',
                             'rating' => (int) ($t->rating ?: 5),
                             'quote' => $t->review,
                             'is_verified' => (bool) $t->is_verified,
@@ -890,7 +938,7 @@ class FintechDataService
             ],
             [
                 'question' => 'What is the minimum and maximum loan amount?',
-                'answer' => 'Loan amounts range from ₹50,000 up to ₹50 Lakhs for personal loans, and up to ₹2 Crore or more for collateral-free business loans, subject to your monthly income, turnover, repayment capacity, and credit score.'
+                'answer' => 'Loan amounts range from ₹50,000 up to ₹50 Lakhs for salaried personal loans, and up to ₹2 Crore or more for collateral-free business loans, subject to your monthly income, turnover, repayment capacity, and credit score.'
             ],
             [
                 'question' => 'How long does loan approval take?',

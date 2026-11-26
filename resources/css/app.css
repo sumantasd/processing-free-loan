@@ -67,7 +67,7 @@
 }
 
 /* Header Single-Row Navigation Alignment Rule (Desktop only) */
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
     .desktop-nav-row {
         display: flex !important;
         align-items: center !important;
@@ -76,7 +76,7 @@
     }
 }
 
-@media (max-width: 1023.98px) {
+@media (max-width: 1279.98px) {
     .desktop-nav-row {
         display: none !important;
     }

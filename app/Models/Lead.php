@@ -109,7 +109,7 @@ class Lead extends Model
     public function getLoanCategoryLabelAttribute(): string
     {
         $categories = [
-            'personal-loan' => 'Personal Loan',
+            'personal-loan' => 'Salaried Personal Loan',
             'business-loan' => 'Business Loan',
             'new-car-loan' => 'New Car Loan',
             'used-car-loan' => 'Used Car Loan',

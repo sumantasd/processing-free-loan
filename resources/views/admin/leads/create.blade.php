@@ -43,7 +43,7 @@
                 <div>
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Loan Category *</label>
                     <select name="loan_category" required class="w-full h-11 px-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-semibold text-[#102B50] focus:bg-white outline-none">
-                        <option value="personal-loan">Personal Loan</option>
+                        <option value="personal-loan">Salaried Personal Loan</option>
                         <option value="business-loan">Business Loan</option>
                         <option value="new-car-loan">New Car Loan</option>
                         <option value="used-car-loan">Used Car Loan</option>

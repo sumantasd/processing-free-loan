@@ -35,7 +35,7 @@
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Parent Company Identity</label>
-                    <input type="text" name="company_identity" value="{{ old('company_identity', $settingsFlat['company_identity'] ?? 'Unit Of Findeal Financial Private Limited') }}" class="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#0866E8]">
+                    <input type="text" name="company_identity" value="{{ old('company_identity', $settingsFlat['company_identity'] ?? 'A Venture of Findeal Financial Services Private Limited') }}" class="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#0866E8]">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Market & Currency</label>
@@ -52,8 +52,12 @@
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Header Support Phone</label>
-                    <input type="text" name="header_phone" value="{{ old('header_phone', $settingsFlat['header_phone'] ?? '+91 7074906556') }}" class="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#0866E8]">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Primary Support Phone</label>
+                    <input type="text" name="header_phone" value="{{ old('header_phone', $settingsFlat['header_phone'] ?? '+91 98002 10503') }}" class="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#0866E8]">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Secondary Support Phone</label>
+                    <input type="text" name="header_phone_secondary" value="{{ old('header_phone_secondary', $settingsFlat['header_phone_secondary'] ?? '+91 76790 96826') }}" class="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#0866E8]">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Header Support Email</label>
@@ -70,24 +74,24 @@
             </div>
         </div>
 
-        <!-- 3. Registered Office & Footer Content -->
+        <!-- 3. Corporate Office & Footer Content -->
         <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-xs">
             <h2 class="text-base font-bold text-[#062B59] mb-4 flex items-center gap-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
-                Office Address & Footer Disclaimers
+                Corporate Office Address & Footer Disclaimers
             </h2>
             <div class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Registered Office Address</label>
-                    <textarea name="footer_address" rows="2" class="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#0866E8]">{{ old('footer_address', $settingsFlat['footer_address'] ?? 'Khata No. 3429, Premer Danga, Near PDB High School, Khattimari, Cooch Behar, West Bengal – 736171, India.') }}</textarea>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Corporate Office Address</label>
+                    <textarea name="footer_address" rows="2" class="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#0866E8]">{{ old('footer_address', $settingsFlat['footer_address'] ?? $settingsFlat['corporate_office'] ?? $settingsFlat['registered_office'] ?? '1st Floor, Spencer Plaza, Burdwan Road, Siliguri – 734001, West Bengal, India.') }}</textarea>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Google Maps Direct Link</label>
-                    <input type="text" name="google_maps_url" value="{{ old('google_maps_url', $settingsFlat['google_maps_url'] ?? 'https://maps.google.com/?q=Premer+Danga+Khattimari+Cooch+Behar+West+Bengal+736171') }}" class="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#0866E8]">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Google Maps Direct Link (Get Directions)</label>
+                    <input type="text" name="google_maps_url" value="{{ old('google_maps_url', $settingsFlat['google_maps_url'] ?? 'https://www.google.com/maps/search/?api=1&query=1st+Floor%2C+Spencer+Plaza%2C+Burdwan+Road%2C+Siliguri+734001%2C+West+Bengal%2C+India') }}" class="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#0866E8]">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Footer Mandatory Disclaimer</label>
-                    <textarea name="footer_disclaimer" rows="3" class="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#0866E8]">{{ old('footer_disclaimer', $settingsFlat['footer_disclaimer'] ?? 'ProcessingFreeLoan.com (Unit Of Findeal Financial Private Limited) is a financial loan aggregator and comparison platform assisting Indian borrowers with loan discovery from RBI-regulated Banks and NBFCs. We are not a direct lender. Processing fee waiver offers are subject to individual lender policies, credit evaluation, and specific promo schemes. Final interest rates and terms are solely determined by the lending institution.') }}</textarea>
+                    <textarea name="footer_disclaimer" rows="3" class="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#0866E8]">{{ old('footer_disclaimer', $settingsFlat['footer_disclaimer'] ?? 'ProcessingFreeLoan.com is A Venture of Findeal Financial Services Private Limited, operating as an independent financial technology aggregator and digital loan facilitator in India. We connect consumers with RBI-registered Banks and Non-Banking Financial Companies (NBFCs). We do not directly lend money or disburse loans. All credit underwriting decisions, sanction limits, interest rates, tenure durations, and processing fee waivers are governed entirely by the lending policies and discretionary risk appraisal of the respective Bank or NBFC.') }}</textarea>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>

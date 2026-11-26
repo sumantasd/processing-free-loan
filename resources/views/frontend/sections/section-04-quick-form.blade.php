@@ -47,7 +47,7 @@
             <div class="relative">
                 <select x-model="quickLoanType" 
                         class="w-full h-11 pl-3 pr-8 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm font-semibold text-[#102B50] focus:border-[#1677FF] outline-none appearance-none">
-                    <option value="personal-loan">Personal Loan</option>
+                    <option value="personal-loan">Salaried Personal Loan</option>
                     <option value="business-loan">Business Loan</option>
                     <option value="new-car-loan">New Car Loan</option>
                     <option value="used-car-loan">Used Car Loan</option>
@@ -185,7 +185,7 @@
                     <select id="quickLoanType" 
                             x-model="quickLoanType" 
                             class="w-full h-12 pl-3.5 pr-8 bg-slate-50 hover:bg-slate-100/80 focus:bg-white text-sm font-semibold text-[#102B50] rounded-xl border border-slate-200 focus:border-[#1677FF] focus:ring-2 focus:ring-blue-100 transition-all outline-none appearance-none cursor-pointer">
-                        <option value="personal-loan">Personal Loan</option>
+                        <option value="personal-loan">Salaried Personal Loan</option>
                         <option value="business-loan">Business Loan</option>
                         <option value="new-car-loan">New Car Loan</option>
                         <option value="used-car-loan">Used Car Loan</option>

@@ -22,13 +22,13 @@
         <!-- 2-Column Grid (All 6 Products with Authentic Indian Images) -->
         <div class="grid grid-cols-2 gap-3 sm:gap-4">
             
-            <!-- 1. Personal Loan (Salaried Indian Professional) -->
+            <!-- 1. Salaried Personal Loan (Salaried Indian Professional) -->
             <div class="bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
                     <!-- Product Image -->
                     <div class="relative h-28 sm:h-32 w-full overflow-hidden bg-slate-100">
                         <img src="{{ asset('images/salaried-man.jpg') }}" 
-                             alt="Personal Loan for Salaried Employees" 
+                             alt="Salaried Personal Loan for Salaried Employees" 
                              class="w-full h-full object-cover object-top">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                         <span class="absolute top-2 left-2 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-white/90 text-[#062B59] shadow-xs">
@@ -41,7 +41,7 @@
 
                     <!-- Details -->
                     <div class="p-3 sm:p-3.5">
-                        <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">Personal Loan</h3>
+                        <h3 class="text-sm font-extrabold text-[#062B59] leading-tight">Salaried Personal Loan</h3>
                         <p class="text-[11px] text-slate-500 leading-snug mt-1 mb-2 line-clamp-2">Quick funds for your personal needs</p>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                 <div class="p-3 pt-0 flex items-center justify-between">
                     <span class="text-[11px] font-bold text-[#1677FF]">From 10.49%</span>
                     <a href="{{ route('loans.personal') }}" 
-                       aria-label="Personal Loan Details"
+                       aria-label="Salaried Personal Loan Details"
                        class="w-7 h-7 rounded-full bg-[#F4511E] text-white flex items-center justify-center hover:bg-[#e64a19] shadow-sm active:scale-90 transition-all flex-shrink-0">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>

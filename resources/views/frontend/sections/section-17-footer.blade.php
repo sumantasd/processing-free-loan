@@ -16,11 +16,11 @@
                 </a>
 
                 <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
-                    ProcessingFreeLoan.com is a specialized digital loan aggregator in India helping salaried employees, businesses, doctors, and chartered accountants secure the right credit from 23+ leading Banks & NBFCs — with exclusive zero processing fee promotional offers.
+                    ProcessingFreeLoan.com is a specialized digital loan aggregator in India helping salaried employees, businessman, doctors, and chartered accountants secure the right credit from 23+ leading Banks & NBFCs — with exclusive zero processing fee promotional offers.
                 </p>
 
-                <div class="text-xs text-slate-400 font-semibold">
-                    A Unit Of <strong class="text-white">{{ $brand['company_identity'] ?? 'Unit Of Findeal Financial Private Limited' }}</strong>
+                <div class="text-xs text-slate-300 font-medium">
+                    A Venture of <strong class="text-white font-semibold">Findeal Financial Services Private Limited</strong>
                 </div>
 
                 <!-- Social Channels -->
@@ -46,7 +46,7 @@
                     Loan Products
                 </h4>
                 <ul class="space-y-2.5 text-xs sm:text-sm font-medium">
-                    <li><a href="{{ route('loans.personal') }}" class="hover:text-[#12C878] transition-colors">Personal Loan</a></li>
+                    <li><a href="{{ route('loans.personal') }}" class="hover:text-[#12C878] transition-colors">Salaried Personal Loan</a></li>
                     <li><a href="{{ route('loans.business') }}" class="hover:text-[#12C878] transition-colors">Business Loan</a></li>
                     <li><a href="{{ route('loans.new-car') }}" class="hover:text-[#12C878] transition-colors">New Car Loan</a></li>
                     <li><a href="{{ route('loans.used-car') }}" class="hover:text-[#12C878] transition-colors">Used Car Loan</a></li>
@@ -78,11 +78,11 @@
                 <div class="space-y-3 text-xs sm:text-sm text-slate-400">
                     
                     <div>
-                        <strong class="text-slate-200 block text-[11px] uppercase tracking-wider mb-0.5">REGISTERED OFFICE:</strong>
+                        <strong class="text-slate-200 block text-[11px] uppercase tracking-wider mb-0.5">{{ strtoupper($brand['office_label'] ?? 'Corporate Office') }}:</strong>
                         <p class="leading-relaxed text-slate-400 text-xs break-words">
-                            {{ $brand['registered_office'] ?? 'Khata No. 3429, Premer Danga, Near PDB High School, Khattimari, Cooch Behar, West Bengal – 736171, India.' }}
+                            {{ $brand['corporate_office'] ?? $brand['office_address'] ?? $brand['registered_office'] ?? '1st Floor, Spencer Plaza, Burdwan Road, Siliguri – 734001, West Bengal, India.' }}
                         </p>
-                        <a href="{{ $brand['google_maps_url'] ?? 'https://maps.google.com/?q=Premer+Danga+Khattimari+Cooch+Behar+West+Bengal+736171' }}" 
+                        <a href="{{ $brand['google_maps_url'] ?? 'https://www.google.com/maps/search/?api=1&query=1st+Floor%2C+Spencer+Plaza%2C+Burdwan+Road%2C+Siliguri+734001%2C+West+Bengal%2C+India' }}" 
                            target="_blank" 
                            rel="noopener"
                            class="inline-flex items-center gap-1.5 text-xs font-bold text-[#12C878] hover:underline mt-1.5">
@@ -91,11 +91,15 @@
                         </a>
                     </div>
 
-                    <div class="pt-1">
-                        <strong class="text-slate-200 block text-[11px] uppercase tracking-wider mb-0.5">Helpline:</strong>
-                        <a href="{{ $brand['phone_url'] ?? 'tel:+917074906556' }}" class="text-white hover:text-[#12C878] transition-colors font-bold text-xs flex items-center gap-1.5">
+                    <div class="pt-1 space-y-1.5">
+                        <strong class="text-slate-200 block text-[11px] uppercase tracking-wider mb-0.5">Customer Helplines:</strong>
+                        <a href="{{ $brand['phone_primary_url'] ?? $brand['phone_url'] ?? 'tel:+919800210503' }}" class="text-white hover:text-[#12C878] transition-colors font-bold text-xs flex items-center gap-1.5" title="Call Primary Helpline">
                             <svg class="w-3.5 h-3.5 text-[#12C878]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            <span>{{ $brand['phone'] ?? '+91 7074906556' }}</span>
+                            <span>{{ $brand['phone_primary'] ?? $brand['phone'] ?? '+91 98002 10503' }}</span>
+                        </a>
+                        <a href="{{ $brand['phone_secondary_url'] ?? 'tel:+917679096826' }}" class="text-white hover:text-[#12C878] transition-colors font-bold text-xs flex items-center gap-1.5" title="Call Secondary Helpline">
+                            <svg class="w-3.5 h-3.5 text-[#12C878]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <span>{{ $brand['phone_secondary'] ?? '+91 76790 96826' }}</span>
                         </a>
                     </div>
 
@@ -146,17 +150,16 @@
         <!-- Financial Services Mandatory Legal Disclaimer -->
         <div class="py-6 text-[11px] text-slate-400 leading-relaxed border-b border-slate-800/80 space-y-2">
             <p>
-                <strong class="text-slate-300">Financial Services Disclaimer:</strong> ProcessingFreeLoan.com is a unit of Findeal Financial Private Limited, operating as an independent financial technology aggregator and digital loan facilitator in India. We connect consumers with RBI-registered Banks and Non-Banking Financial Companies (NBFCs). We do not directly lend money or disburse loans. All credit underwriting decisions, sanction limits, interest rates, tenure durations, and processing fee waivers are governed entirely by the lending policies and discretionary risk appraisal of the respective Bank or NBFC.
+                <strong class="text-slate-300">Financial Services Disclaimer:</strong> ProcessingFreeLoan.com is A Venture of Findeal Financial Services Private Limited, operating as an independent financial technology aggregator and digital loan facilitator in India. We connect consumers with RBI-registered Banks and Non-Banking Financial Companies (NBFCs). We do not directly lend money or disburse loans. All credit underwriting decisions, sanction limits, interest rates, tenure durations, and processing fee waivers are governed entirely by the lending policies and discretionary risk appraisal of the respective Bank or NBFC.
             </p>
         </div>
 
         <!-- Bottom Copyright & Developer Credit (Strict Horizontal Row on Desktop) -->
         <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
             
-            <!-- LEFT: Copyright & Company Identity -->
+            <!-- LEFT: Copyright -->
             <div class="text-center sm:text-left">
-                <span>© 2026 ProcessingFreeLoan.com. All rights reserved.</span>
-                <span class="block sm:inline sm:ml-1 text-slate-500 font-medium">Unit Of Findeal Financial Private Limited</span>
+                <span>© {{ date('Y') }} ProcessingFreeLoan.com. All rights reserved. A Venture of Findeal Financial Services Private Limited</span>
             </div>
 
             <!-- CENTER: Legal Links -->

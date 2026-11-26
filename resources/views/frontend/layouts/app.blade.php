@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Processing Free Loan | Loan Without Processing Fee in India')</title>
-    <meta name="description" content="@yield('meta_description', 'Compare and apply for Personal Loans, Business Loans, Car Loans, Doctor & CA Loans from 23+ leading Banks and NBFCs with Zero Processing Fee offers.')">
-    <meta name="keywords" content="processing free loan, zero processing fee loan, personal loan without processing fee, business loan zero fee, doctor loan, ca loan, car loan offers india">
+    <meta name="description" content="@yield('meta_description', 'Compare and apply for Salaried Personal Loans, Business Loans, Car Loans, Doctor & CA Loans from 23+ leading Banks and NBFCs with Zero Processing Fee offers.')">
+    <meta name="keywords" content="processing free loan, zero processing fee loan, salaried personal loan without processing fee, personal loan without processing fee, business loan zero fee, doctor loan, ca loan, car loan offers india">
     <meta name="author" content="ProcessingFreeLoan.com">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#062B59">
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="@yield('title', 'Processing Free Loan | Loan Without Processing Fee')">
-    <meta property="og:description" content="@yield('meta_description', 'Compare and apply for Personal, Business, Car, and Professional Loans from leading Banks and NBFCs in India.')">
+    <meta property="og:description" content="@yield('meta_description', 'Compare and apply for Salaried Personal, Business, Car, and Professional Loans from leading Banks and NBFCs in India.')">
     <meta property="og:image" content="{{ asset('images/logo.png') }}">
 
     <!-- Twitter -->

@@ -234,7 +234,7 @@
                             </label>
                             <select x-model="loanType" 
                                     class="w-full h-11 px-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-[#102B50] focus:bg-white focus:border-[#1677FF] outline-none transition-all box-border">
-                                <option value="personal-loan">Personal Loan</option>
+                                <option value="personal-loan">Salaried Personal Loan</option>
                                 <option value="business-loan">Business Loan</option>
                                 <option value="new-car-loan">New Car Loan</option>
                                 <option value="used-car-loan">Used Car Loan</option>

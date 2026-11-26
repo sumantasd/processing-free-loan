@@ -291,8 +291,8 @@
 
         <!-- Footer -->
         <footer class="h-12 border-t border-slate-200/80 bg-white px-6 flex items-center justify-between text-[11px] text-slate-400">
-            <div>ProcessingFreeLoan.com CRM &copy; {{ date('Y') }} • Unit Of Findeal Financial Private Limited</div>
-            <div class="font-semibold text-slate-500">Khattimari, Cooch Behar, West Bengal</div>
+            <div>ProcessingFreeLoan.com CRM &copy; {{ date('Y') }} • A Venture of Findeal Financial Services Private Limited</div>
+            <div class="font-semibold text-slate-500">Siliguri, West Bengal</div>
         </footer>
 
     </div>

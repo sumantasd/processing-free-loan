@@ -38,19 +38,29 @@
                         Our team is ready to help you explore suitable loan options and guide you through the enquiry process.
                     </p>
 
-                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
                         <button type="button" 
                                 @click="openEnquiry()"
-                                class="px-8 py-3.5 rounded-full font-bold text-sm text-[#062B59] bg-[#12C878] hover:bg-[#0fa863] hover:text-white shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5">
+                                class="px-7 py-3.5 rounded-full font-bold text-sm text-[#062B59] bg-[#12C878] hover:bg-[#0fa863] hover:text-white shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5">
                             Talk to an Expert →
                         </button>
 
-                        <a href="{{ $brand['phone_url'] ?? 'tel:+917074906556' }}" 
-                           class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full font-bold text-sm text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm transition-all">
+                        <a href="{{ $brand['phone_primary_url'] ?? $brand['phone_url'] ?? 'tel:+919800210503' }}" 
+                           class="inline-flex items-center gap-2 px-5 py-3.5 rounded-full font-bold text-sm text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm transition-all"
+                           title="Call Primary Helpline">
                             <svg class="w-4 h-4 text-[#12C878]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                             </svg>
-                            <span>Call Us Now: {{ $brand['phone'] ?? '+91 7074906556' }}</span>
+                            <span>Call: {{ $brand['phone_primary'] ?? $brand['phone'] ?? '+91 98002 10503' }}</span>
+                        </a>
+
+                        <a href="{{ $brand['phone_secondary_url'] ?? 'tel:+917679096826' }}" 
+                           class="inline-flex items-center gap-2 px-5 py-3.5 rounded-full font-bold text-sm text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm transition-all"
+                           title="Call Secondary Helpline">
+                            <svg class="w-4 h-4 text-[#1677FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <span>Call: {{ $brand['phone_secondary'] ?? '+91 76790 96826' }}</span>
                         </a>
                     </div>
 

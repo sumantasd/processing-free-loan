@@ -163,7 +163,7 @@
         <!-- Footer -->
         <footer class="h-12 border-t border-slate-200 bg-white px-6 flex items-center justify-between text-[11px] text-slate-400">
             <div>ProcessingFreeLoan.com • Employee Lead Management Workspace</div>
-            <div class="font-semibold text-slate-500">Unit Of Findeal Financial Private Limited</div>
+            <div class="font-semibold text-slate-500">A Venture of Findeal Financial Services Private Limited</div>
         </footer>
 
     </div>

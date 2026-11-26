@@ -81,7 +81,7 @@
             <div>
                 <select name="loan_category" class="w-full h-10 px-3 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold text-[#102B50] focus:bg-white outline-none">
                     <option value="">All Loan Categories</option>
-                    <option value="personal-loan" {{ request('loan_category') === 'personal-loan' ? 'selected' : '' }}>Personal Loan</option>
+                    <option value="personal-loan" {{ request('loan_category') === 'personal-loan' ? 'selected' : '' }}>Salaried Personal Loan</option>
                     <option value="business-loan" {{ request('loan_category') === 'business-loan' ? 'selected' : '' }}>Business Loan</option>
                     <option value="new-car-loan" {{ request('loan_category') === 'new-car-loan' ? 'selected' : '' }}>New Car Loan</option>
                     <option value="used-car-loan" {{ request('loan_category') === 'used-car-loan' ? 'selected' : '' }}>Used Car Loan</option>

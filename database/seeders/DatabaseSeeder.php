@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
             ['email' => 'admin@processingfreeloan.com'],
             [
                 'name' => 'Super Administrator',
-                'mobile' => '7074906556',
+                'mobile' => '9800210503',
                 'password' => Hash::make('Password@123'),
                 'employee_id' => 'EMP001',
                 'designation' => 'System Architect & Chief Administrator',
@@ -140,8 +140,11 @@ class DatabaseSeeder extends Seeder
         }
 
         // Header and Footer specific settings
+        WebsiteSetting::set('header_phone', '+91 98002 10503', 'header', 'Primary Header Support Phone');
+        WebsiteSetting::set('header_phone_secondary', '+91 76790 96826', 'header', 'Secondary Header Support Phone');
         WebsiteSetting::set('header_cta_text', 'Apply Now', 'header', 'Header Button Label');
         WebsiteSetting::set('header_cta_url', '#apply-modal', 'header', 'Header Button URL');
+        WebsiteSetting::set('footer_address', '1st Floor, Spencer Plaza, Burdwan Road, Siliguri – 734001, West Bengal, India.', 'footer', 'Corporate Office Address', 'textarea');
         WebsiteSetting::set('footer_disclaimer', $brandConfig['disclaimer'], 'footer', 'Footer Regulatory Disclaimer', 'textarea');
         WebsiteSetting::set('footer_developer_credit', 'Crafted by Tech Googly', 'footer', 'Developer Credit');
         WebsiteSetting::set('footer_developer_url', 'https://techgoogly.com/', 'footer', 'Developer URL');
@@ -150,9 +153,9 @@ class DatabaseSeeder extends Seeder
         $sections = [
             'hero' => [
                 'title' => 'Get Your Loan Without Processing Fee',
-                'subtitle' => 'Compare and explore suitable loan options from leading Banks & NBFCs. Discover competitive offers, explore eligibility and get expert assistance throughout your loan journey.',
-                'badge' => 'YOUR TRUSTED FINANCIAL PARTNER',
-                'image' => 'images/hero-man.jpg',
+                'subtitle' => 'Compare and apply for the best loan options from leading Banks & NBFCs. Get competitive offers, quick approval and expert support — all in one place.',
+                'badge' => 'Your Trusted Financial Partner',
+                'image' => 'images/hero-family.png',
                 'is_active' => true,
                 'display_order' => 1,
             ],
@@ -257,8 +260,8 @@ class DatabaseSeeder extends Seeder
         // 5. Seed Pages
         $pages = [
             'home' => ['title' => 'Home', 'seo_title' => 'Processing Free Loan | Loan Without Processing Fee in India', 'seo_description' => 'Compare and apply for Personal, Business, Car, Doctor & CA Loans with Zero Processing Fee promotional offers.'],
-            'about' => ['title' => 'About Us', 'seo_title' => 'About Processing Free Loan | Unit of Findeal Financial Private Limited', 'seo_description' => 'Discover our mission to eliminate processing fees for Indian borrowers across leading Banks and NBFCs.'],
-            'contact' => ['title' => 'Contact Us', 'seo_title' => 'Contact Us | Processing Free Loan Customer Care & Branch Office', 'seo_description' => 'Get in touch with our loan advisory team in Cooch Behar and Kolkata, West Bengal.'],
+            'about' => ['title' => 'About Us', 'seo_title' => 'About Processing Free Loan | A Venture of Findeal Financial Services Private Limited', 'seo_description' => 'Discover our mission to eliminate processing fees for Indian borrowers across leading Banks and NBFCs.'],
+            'contact' => ['title' => 'Contact Us', 'seo_title' => 'Contact Us | Processing Free Loan Customer Care & Branch Office', 'seo_description' => 'Get in touch with our loan advisory team in Siliguri and Kolkata, West Bengal.'],
             'partners' => ['title' => 'Our Partners', 'seo_title' => '23+ Banking & NBFC Partners | Processing Free Loan', 'seo_description' => 'Explore RBI-regulated banks and NBFCs offering zero processing fee promotional loans.'],
             'privacy-policy' => ['title' => 'Privacy Policy', 'seo_title' => 'Privacy Policy | ProcessingFreeLoan.com', 'seo_description' => 'We safeguard your financial and personal data under Indian IT and RBI digital lending standards.'],
             'terms-conditions' => ['title' => 'Terms & Conditions', 'seo_title' => 'Terms & Conditions | ProcessingFreeLoan.com', 'seo_description' => 'Official terms of service governing loan comparisons, enquiries and financial aggregation.'],
@@ -393,7 +396,7 @@ class DatabaseSeeder extends Seeder
                 'customer_image' => $t['avatar'] ?? null,
                 'role' => $t['role'] ?? 'Verified Customer',
                 'location' => $t['location'] ?? 'West Bengal',
-                'loan_category' => $t['loan_type'] ?? 'Personal Loan',
+                'loan_category' => $t['loan_type'] ?? 'Salaried Personal Loan',
                 'review' => $t['quote'] ?? 'Excellent zero processing fee loan service.',
                 'rating' => $t['rating'] ?? 5,
                 'is_verified' => true,

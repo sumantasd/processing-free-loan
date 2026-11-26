@@ -79,7 +79,7 @@ class LeadController extends Controller
             \Illuminate\Support\Facades\Log::error('Lead submission error: ' . $e->getMessage());
             return response()->json([
                 'success' => false,
-                'message' => 'Unable to submit enquiry at this moment. Please call our helpline directly: +91 7074906556',
+                'message' => 'Unable to submit enquiry at this moment. Please call our helpline directly: +91 98002 10503 / +91 76790 96826',
             ], 500);
         }
     }
